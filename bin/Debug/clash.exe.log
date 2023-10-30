@@ -1,0 +1,1992 @@
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\пономарёв александр\clash-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x75B595F8 в функции strchr(). Попытка прочесть данные по адресу 0x00000096 в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005042FC (32-bit), Flags: CMdRe0, Thread: 0x23F8 (Main), GetLastError(): 6 (Неверный дескриптор). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x75B595F8 in C:\Windows\System32\msvcrt.dll: strchr()
+
+# 1 0x0044B278 in D:\пономарёв александр\clash-main\bin\Debug\clash.exe: DrawButton() at d:/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 2 0x0042C1E1 in D:\пономарёв александр\clash-main\bin\Debug\clash.exe: main() at D:/пономарёв александр/clash-main/main.cpp (80):
+
+     78:         for (int i=0; i<4; i++)
+     79:         {
+=>   80:             btn[i].DrawButton();
+     81:         }
+     82: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txDrawText(double, double, double, double, const char*, unsigned int, HDC) at d:\codeblocks\mingw\include\txlib.h (13403):
+
+  13401: $   RECT r = { ROUND (x0), ROUND (y0), ROUND (x1), ROUND (y1) };
+  13402: 
+=>13403: $   if (!strchr (text, '\n')) format |= DT_SINGLELINE;
+  13404: 
+  13405: $   unsigned prev = txSetTextAlign (TA_LEFT | TA_TOP | TA_NOUPDATECP, dc);
+
+# 1 in void Button::DrawButton() at D:\пономарёв александр\clash-main\main.cpp (17):
+
+     15:         txSetColor(TX_BLACK);
+     16:         txSelectFont("Arial", 24);
+=>   17:         txDrawText(x, 30, x+150, 70, name);
+     18:     }
+     19: };
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 25 2023 19:27:37, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Sep 25 2023 19:27:56
+
+Run file:	D:\пономарёв александр\clash-main\bin\Debug\clash.exe
+Directory:	D:\пономарёв александр\clash-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\пономарёв александр\clash-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x75B595F8 в функции strchr(). Попытка прочесть данные по адресу 0x00000096 в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005042FC (32-bit), Flags: CMdRe0, Thread: 0x23F8 (Main), GetLastError(): 6 (Неверный дескриптор). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x75B595F8 in C:\Windows\System32\msvcrt.dll: strchr()
+
+# 1 0x0044B278 in D:\пономарёв александр\clash-main\bin\Debug\clash.exe: DrawButton() at d:/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 2 0x0042C1E1 in D:\пономарёв александр\clash-main\bin\Debug\clash.exe: main() at D:/пономарёв александр/clash-main/main.cpp (80):
+
+     78:         for (int i=0; i<4; i++)
+     79:         {
+=>   80:             btn[i].DrawButton();
+     81:         }
+     82: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txDrawText(double, double, double, double, const char*, unsigned int, HDC) at d:\codeblocks\mingw\include\txlib.h (13403):
+
+  13401: $   RECT r = { ROUND (x0), ROUND (y0), ROUND (x1), ROUND (y1) };
+  13402: 
+=>13403: $   if (!strchr (text, '\n')) format |= DT_SINGLELINE;
+  13404: 
+  13405: $   unsigned prev = txSetTextAlign (TA_LEFT | TA_TOP | TA_NOUPDATECP, dc);
+
+# 1 in void Button::DrawButton() at D:\пономарёв александр\clash-main\main.cpp (17):
+
+     15:         txSetColor(TX_BLACK);
+     16:         txSelectFont("Arial", 24);
+=>   17:         txDrawText(x, 30, x+150, 70, name);
+     18:     }
+     19: };
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\codeblocks\mingw\include\txlib.h
+Compiled:	Sep 25 2023 19:27:37, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Sep 25 2023 19:27:56
+
+Run file:	D:\пономарёв александр\clash-main\bin\Debug\clash.exe
+Directory:	D:\пономарёв александр\clash-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042C6AB в функции main() в файле D:/пономарёв александр/clashofclans-main/main.cpp на строке 150. Попытка прочесть данные по адресу 0x1EB95D88 в модуле D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005072FC (32-bit), Flags: CMdRe0, Thread: 0xDAC (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042C6AB in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: main() at D:/пономарёв александр/clashofclans-main/main.cpp (150):
+
+    148:         for(int i=0; 1<count_pic; i++)
+    149:         {
+=>  150:             if(txMouseButtons() == 1 &&
+    151:             txMouseX() >= centrPic[i].x &&
+    152:             txMouseX() <= centrPic[i].x + centrPic[i].w_scr &&
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int main() at D:\пономарёв александр\clashofclans-main\main.cpp (151):
+
+    149:         {
+    150:             if(txMouseButtons() == 1 &&
+=>  151:             txMouseX() >= centrPic[i].x &&
+    152:             txMouseX() <= centrPic[i].x + centrPic[i].w_scr &&
+    153:             txMouseY() >= centrPic[i].y &&
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\codeblocks\mingw\include\txlib.h
+Compiled:	Oct  9 2023 19:10:16, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 09 2023 19:10:37
+
+Run file:	D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\пономарёв александр\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042C6AB в функции main() в файле D:/пономарёв александр/clashofclans-main/main.cpp на строке 150. Попытка прочесть данные по адресу 0x1EB95D88 в модуле D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005072FC (32-bit), Flags: CMdRe0, Thread: 0xDAC (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042C6AB in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: main() at D:/пономарёв александр/clashofclans-main/main.cpp (150):
+
+    148:         for(int i=0; 1<count_pic; i++)
+    149:         {
+=>  150:             if(txMouseButtons() == 1 &&
+    151:             txMouseX() >= centrPic[i].x &&
+    152:             txMouseX() <= centrPic[i].x + centrPic[i].w_scr &&
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int main() at D:\пономарёв александр\clashofclans-main\main.cpp (151):
+
+    149:         {
+    150:             if(txMouseButtons() == 1 &&
+=>  151:             txMouseX() >= centrPic[i].x &&
+    152:             txMouseX() <= centrPic[i].x + centrPic[i].w_scr &&
+    153:             txMouseY() >= centrPic[i].y &&
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\codeblocks\mingw\include\txlib.h
+Compiled:	Oct  9 2023 19:10:16, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 09 2023 19:10:37
+
+Run file:	D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\пономарёв александр\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042C6C6 в функции main() в файле D:/пономарёв александр/clashofclans-main/main.cpp на строке 181. Попытка прочесть данные по адресу 0xECE0F250 в модуле D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005052FC (32-bit), Flags: CMdRe0, Thread: 0x24F4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042C6C6 in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: main() at D:/пономарёв александр/clashofclans-main/main.cpp (181):
+
+    179:             if (GetAsyncKeyState (VK_OEM_PLUS) || (VK_ADD))
+    180:             {
+=>  181:                 centrPic[vybor].w_scr = centrPic[vybor].w_scr * 1.1;
+    182:                 centrPic[vybor].h_scr = centrPic[vybor].h_scr * 1.1;
+    183:             }
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int main() at D:\пономарёв александр\clashofclans-main\main.cpp (155):
+
+    153:         char str[10];
+    154:         sprintf(str, "индекс чёто там  = %d", vybor);
+=>  155:         txTextOut(50, 650, str);
+    156: 
+    157:         if(vybor>=0)
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 13 2023 18:56:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 13 2023 18:56:39
+
+Run file:	D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\пономарёв александр\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042C6C6 в функции main() в файле D:/пономарёв александр/clashofclans-main/main.cpp на строке 181. Попытка прочесть данные по адресу 0xECE0F250 в модуле D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005052FC (32-bit), Flags: CMdRe0, Thread: 0x24F4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042C6C6 in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: main() at D:/пономарёв александр/clashofclans-main/main.cpp (181):
+
+    179:             if (GetAsyncKeyState (VK_OEM_PLUS) || (VK_ADD))
+    180:             {
+=>  181:                 centrPic[vybor].w_scr = centrPic[vybor].w_scr * 1.1;
+    182:                 centrPic[vybor].h_scr = centrPic[vybor].h_scr * 1.1;
+    183:             }
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int main() at D:\пономарёв александр\clashofclans-main\main.cpp (155):
+
+    153:         char str[10];
+    154:         sprintf(str, "индекс чёто там  = %d", vybor);
+=>  155:         txTextOut(50, 650, str);
+    156: 
+    157:         if(vybor>=0)
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 13 2023 18:56:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 13 2023 18:56:39
+
+Run file:	D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\пономарёв александр\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042C6C6 в функции main() в файле D:/пономарёв александр/clashofclans-main/main.cpp на строке 181. Попытка прочесть данные по адресу 0xECE0F250 в модуле D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005052FC (32-bit), Flags: CMdRe0, Thread: 0x1274 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042C6C6 in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: main() at D:/пономарёв александр/clashofclans-main/main.cpp (181):
+
+    179:             if (GetAsyncKeyState (VK_OEM_PLUS) || (VK_ADD))
+    180:             {
+=>  181:                 centrPic[vybor].w_scr = centrPic[vybor].w_scr * 1.1;
+    182:                 centrPic[vybor].h_scr = centrPic[vybor].h_scr * 1.1;
+    183:             }
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int main() at D:\пономарёв александр\clashofclans-main\main.cpp (155):
+
+    153:         char str[10];
+    154:         sprintf(str, "индекс чёто там  = %d", vybor);
+=>  155:         txTextOut(50, 650, str);
+    156: 
+    157:         if(vybor>=0)
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 13 2023 18:58:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 13 2023 18:58:21
+
+Run file:	D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\пономарёв александр\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042C6C6 в функции main() в файле D:/пономарёв александр/clashofclans-main/main.cpp на строке 181. Попытка прочесть данные по адресу 0xECE0F250 в модуле D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005052FC (32-bit), Flags: CMdRe0, Thread: 0x1274 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042C6C6 in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: main() at D:/пономарёв александр/clashofclans-main/main.cpp (181):
+
+    179:             if (GetAsyncKeyState (VK_OEM_PLUS) || (VK_ADD))
+    180:             {
+=>  181:                 centrPic[vybor].w_scr = centrPic[vybor].w_scr * 1.1;
+    182:                 centrPic[vybor].h_scr = centrPic[vybor].h_scr * 1.1;
+    183:             }
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int main() at D:\пономарёв александр\clashofclans-main\main.cpp (155):
+
+    153:         char str[10];
+    154:         sprintf(str, "индекс чёто там  = %d", vybor);
+=>  155:         txTextOut(50, 650, str);
+    156: 
+    157:         if(vybor>=0)
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 13 2023 18:58:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 13 2023 18:58:21
+
+Run file:	D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\пономарёв александр\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe, файл: d:\codeblocks\mingw\include\txlib.h, строка: 10851, функция: bool {anonymous}::TX::_txBuffer_Delete(HDC__**),
+
+Сообщение: Параметр "*dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005072FC (32-bit), Flags: CMdRe0, Thread: 0x810 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041075E in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: _txBuffer_Delete() at d:/codeblocks/mingw/include/txlib.h (10851)
+# 1 0x00421DB7 in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: txDeleteDC() at d:/codeblocks/mingw/include/txlib.h (13597)
+# 2 0x00422027 in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: txDeleteDC() at d:/codeblocks/mingw/include/txlib.h (13619)
+
+# 3 0x0042CE34 in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: main() at D:/пономарёв александр/clashofclans-main/main.cpp (243):
+
+    241:     for (int i=0; i<count_pic; i++)
+    242:     {
+=>  243:         txDeleteDC(centrPic[i].pic);
+    244:     }
+    245: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txBuffer_Delete(HDC__**) at d:\codeblocks\mingw\include\txlib.h (10851):
+
+  10849: $1  if (_TX_ARGUMENT_FAILED (dc)) return false;
+  10850: $   if (                   !*dc)  return false;
+=>10851: $   if (_TX_HDC_FAILED     (*dc)) return false;
+  10852: 
+  10853: $   if (!Win32::GetObjectType (Win32::GetCurrentObject (*dc, OBJ_BITMAP))) return false;
+
+# 1 in bool {anonymous}::TX::txDeleteDC(HDC__**) at d:\codeblocks\mingw\include\txlib.h (13597):
+
+  13595: 
+  13596: $   HDC  dc = *pdc;
+=>13597: $   bool ok = _txBuffer_Delete (pdc);
+  13598: $   if (!ok) return false;
+  13599: 
+
+# 2 in bool {anonymous}::TX::txDeleteDC(HDC) at d:\codeblocks\mingw\include\txlib.h (13619):
+
+  13617: bool txDeleteDC (HDC dc)
+  13618:     {
+=>13619: $1  return txDeleteDC (&dc);
+  13620:     }
+  13621: 
+
+# 3 in int main() at D:\пономарёв александр\clashofclans-main\main.cpp (243):
+
+    241:     for (int i=0; i<count_pic; i++)
+    242:     {
+=>  243:         txDeleteDC(centrPic[i].pic);
+    244:     }
+    245: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 16 2023 19:20:17, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 16 2023 19:20:38
+
+Run file:	D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\пономарёв александр\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x004518EC в функции _M_is_leaked() в файле d:/codeblocks/mingw/include/c++/4.8.1/debug/functions.h на строке 45. Попытка прочесть данные по адресу 0xFFFFFFFF в модуле D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005082FC (32-bit), Flags: CMdRe0, Thread: 0x1A94 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x004518EC in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: _M_is_leaked() at d:/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 1 0x00480553 in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: _M_grab() at d:/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 2 0x00486E3F in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe at d:/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 3 0x0042C582 in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: main() at D:/пономарёв александр/clashofclans-main/main.cpp (71):
+
+     69:                     txSleep(10);
+     70:                 }
+=>   71:                 centrPic[nCentrPic]  = {500,
+     72:                                         100,
+     73:                                         menuPic[npic].pic,
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int main() at D:\пономарёв александр\clashofclans-main\main.cpp (67):
+
+     65:             if(menuPic[i].Click() && menuPic[i].visible)
+     66:             {
+=>   67:                 while(txMouseButtons() == 1)
+     68:                 {
+     69:                     txSleep(10);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 16 2023 19:43:43, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 16 2023 19:44:03
+
+Run file:	D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\пономарёв александр\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x004518EC в функции _M_is_leaked() в файле d:/codeblocks/mingw/include/c++/4.8.1/debug/functions.h на строке 45. Попытка прочесть данные по адресу 0xFFFFFFFF в модуле D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005082FC (32-bit), Flags: CMdRe0, Thread: 0x1A94 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x004518EC in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: _M_is_leaked() at d:/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 1 0x00480553 in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: _M_grab() at d:/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 2 0x00486E3F in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe at d:/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 3 0x0042C582 in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: main() at D:/пономарёв александр/clashofclans-main/main.cpp (71):
+
+     69:                     txSleep(10);
+     70:                 }
+=>   71:                 centrPic[nCentrPic]  = {500,
+     72:                                         100,
+     73:                                         menuPic[npic].pic,
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int main() at D:\пономарёв александр\clashofclans-main\main.cpp (67):
+
+     65:             if(menuPic[i].Click() && menuPic[i].visible)
+     66:             {
+=>   67:                 while(txMouseButtons() == 1)
+     68:                 {
+     69:                     txSleep(10);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 16 2023 19:43:43, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 16 2023 19:44:03
+
+Run file:	D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\пономарёв александр\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe, файл: d:\codeblocks\mingw\include\txlib.h, строка: 10851, функция: bool {anonymous}::TX::_txBuffer_Delete(HDC__**),
+
+Сообщение: Параметр "*dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005082FC (32-bit), Flags: CMdRe0, Thread: 0x1A44 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041075E in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: _txBuffer_Delete() at d:/codeblocks/mingw/include/txlib.h (10851)
+# 1 0x00421DB7 in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: txDeleteDC() at d:/codeblocks/mingw/include/txlib.h (13597)
+# 2 0x00422027 in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: txDeleteDC() at d:/codeblocks/mingw/include/txlib.h (13619)
+
+# 3 0x0042CCB1 in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: main() at D:/пономарёв александр/clashofclans-main/main.cpp (162):
+
+    160:     for (int i=0; i<count_pic; i++)
+    161:     {
+=>  162:         txDeleteDC(centrPic[i].pic);
+    163:     }
+    164: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txBuffer_Delete(HDC__**) at d:\codeblocks\mingw\include\txlib.h (10851):
+
+  10849: $1  if (_TX_ARGUMENT_FAILED (dc)) return false;
+  10850: $   if (                   !*dc)  return false;
+=>10851: $   if (_TX_HDC_FAILED     (*dc)) return false;
+  10852: 
+  10853: $   if (!Win32::GetObjectType (Win32::GetCurrentObject (*dc, OBJ_BITMAP))) return false;
+
+# 1 in bool {anonymous}::TX::txDeleteDC(HDC__**) at d:\codeblocks\mingw\include\txlib.h (13597):
+
+  13595: 
+  13596: $   HDC  dc = *pdc;
+=>13597: $   bool ok = _txBuffer_Delete (pdc);
+  13598: $   if (!ok) return false;
+  13599: 
+
+# 2 in bool {anonymous}::TX::txDeleteDC(HDC) at d:\codeblocks\mingw\include\txlib.h (13619):
+
+  13617: bool txDeleteDC (HDC dc)
+  13618:     {
+=>13619: $1  return txDeleteDC (&dc);
+  13620:     }
+  13621: 
+
+# 3 in int main() at D:\пономарёв александр\clashofclans-main\main.cpp (162):
+
+    160:     for (int i=0; i<count_pic; i++)
+    161:     {
+=>  162:         txDeleteDC(centrPic[i].pic);
+    163:     }
+    164: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 16 2023 19:45:27, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 16 2023 19:45:49
+
+Run file:	D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\пономарёв александр\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe, файл: d:\codeblocks\mingw\include\txlib.h, строка: 10851, функция: bool {anonymous}::TX::_txBuffer_Delete(HDC__**),
+
+Сообщение: Параметр "*dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005082FC (32-bit), Flags: CMdRe0, Thread: 0x2320 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041075E in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: _txBuffer_Delete() at d:/codeblocks/mingw/include/txlib.h (10851)
+# 1 0x00421DB7 in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: txDeleteDC() at d:/codeblocks/mingw/include/txlib.h (13597)
+# 2 0x00422027 in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: txDeleteDC() at d:/codeblocks/mingw/include/txlib.h (13619)
+
+# 3 0x0042CCB1 in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: main() at D:/пономарёв александр/clashofclans-main/main.cpp (162):
+
+    160:     for (int i=0; i<count_pic; i++)
+    161:     {
+=>  162:         txDeleteDC(centrPic[i].pic);
+    163:     }
+    164: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txBuffer_Delete(HDC__**) at d:\codeblocks\mingw\include\txlib.h (10851):
+
+  10849: $1  if (_TX_ARGUMENT_FAILED (dc)) return false;
+  10850: $   if (                   !*dc)  return false;
+=>10851: $   if (_TX_HDC_FAILED     (*dc)) return false;
+  10852: 
+  10853: $   if (!Win32::GetObjectType (Win32::GetCurrentObject (*dc, OBJ_BITMAP))) return false;
+
+# 1 in bool {anonymous}::TX::txDeleteDC(HDC__**) at d:\codeblocks\mingw\include\txlib.h (13597):
+
+  13595: 
+  13596: $   HDC  dc = *pdc;
+=>13597: $   bool ok = _txBuffer_Delete (pdc);
+  13598: $   if (!ok) return false;
+  13599: 
+
+# 2 in bool {anonymous}::TX::txDeleteDC(HDC) at d:\codeblocks\mingw\include\txlib.h (13619):
+
+  13617: bool txDeleteDC (HDC dc)
+  13618:     {
+=>13619: $1  return txDeleteDC (&dc);
+  13620:     }
+  13621: 
+
+# 3 in int main() at D:\пономарёв александр\clashofclans-main\main.cpp (162):
+
+    160:     for (int i=0; i<count_pic; i++)
+    161:     {
+=>  162:         txDeleteDC(centrPic[i].pic);
+    163:     }
+    164: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 16 2023 19:45:27, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 20 2023 18:41:45
+
+Run file:	D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\пономарёв александр\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe, файл: d:\codeblocks\mingw\include\txlib.h, строка: 10851, функция: bool {anonymous}::TX::_txBuffer_Delete(HDC__**),
+
+Сообщение: Параметр "*dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005082FC (32-bit), Flags: CMdRe0, Thread: 0x988 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041075E in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: _txBuffer_Delete() at d:/codeblocks/mingw/include/txlib.h (10851)
+# 1 0x00421DB7 in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: txDeleteDC() at d:/codeblocks/mingw/include/txlib.h (13597)
+# 2 0x00422027 in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: txDeleteDC() at d:/codeblocks/mingw/include/txlib.h (13619)
+
+# 3 0x0042CCB1 in D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe: main() at D:/пономарёв александр/clashofclans-main/main.cpp (162):
+
+    160:     for (int i=0; i<count_pic; i++)
+    161:     {
+=>  162:         txDeleteDC(centrPic[i].pic);
+    163:     }
+    164: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txBuffer_Delete(HDC__**) at d:\codeblocks\mingw\include\txlib.h (10851):
+
+  10849: $1  if (_TX_ARGUMENT_FAILED (dc)) return false;
+  10850: $   if (                   !*dc)  return false;
+=>10851: $   if (_TX_HDC_FAILED     (*dc)) return false;
+  10852: 
+  10853: $   if (!Win32::GetObjectType (Win32::GetCurrentObject (*dc, OBJ_BITMAP))) return false;
+
+# 1 in bool {anonymous}::TX::txDeleteDC(HDC__**) at d:\codeblocks\mingw\include\txlib.h (13597):
+
+  13595: 
+  13596: $   HDC  dc = *pdc;
+=>13597: $   bool ok = _txBuffer_Delete (pdc);
+  13598: $   if (!ok) return false;
+  13599: 
+
+# 2 in bool {anonymous}::TX::txDeleteDC(HDC) at d:\codeblocks\mingw\include\txlib.h (13619):
+
+  13617: bool txDeleteDC (HDC dc)
+  13618:     {
+=>13619: $1  return txDeleteDC (&dc);
+  13620:     }
+  13621: 
+
+# 3 in int main() at D:\пономарёв александр\clashofclans-main\main.cpp (162):
+
+    160:     for (int i=0; i<count_pic; i++)
+    161:     {
+=>  162:         txDeleteDC(centrPic[i].pic);
+    163:     }
+    164: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 16 2023 19:45:27, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 20 2023 18:41:50
+
+Run file:	D:\пономарёв александр\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\пономарёв александр\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00401433 в функции __exchange_and_add() в файле d:/program/codeblocks/mingw/include/c++/4.8.1/ext/atomicity.h на строке 47. Попытка записать данные по адресу 0x004CD81E в модуле D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005082FC (32-bit), Flags: CMdRe0, Thread: 0x4EC8 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00401433 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: __exchange_and_add() at d:/program/codeblocks/mingw/include/c++/4.8.1/ext/atomicity.h (47):
+
+     45:   static inline _Atomic_word 
+     46:   __exchange_and_add(volatile _Atomic_word* __mem, int __val)
+=>   47:   { return __atomic_fetch_add(__mem, __val, __ATOMIC_ACQ_REL); }
+     48: 
+     49:   static inline void
+
+# 1 0x004014A5 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: __exchange_and_add_dispatch() at d:/program/codeblocks/mingw/include/c++/4.8.1/ext/atomicity.h (80):
+
+     78: #ifdef __GTHREADS
+     79:     if (__gthread_active_p())
+=>   80:       return __exchange_and_add(__mem, __val);
+     81:     else
+     82:       return __exchange_and_add_single(__mem, __val);
+
+# 2 0x00480CDA in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: _M_dispose() at d:/program/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 3 0x00488BD3 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe at d:/program/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 4 0x0044C9BA in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe at d:/program/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 5 0x0042C471 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: main() at D:/проекты и другое/clashofclans-main/main.cpp (20):
+
+     18:     menuPic[1] = {20, 300, txLoadImage ("pictures/build/bilder.bmp"), 54, 63, 54, 63, false, "обычные здания"};
+     19:     menuPic[2] = {20, 100, txLoadImage ("pictures/defense/zabor.bmp"), 120, 120, 238, 212, false, "защитные здания"};
+=>   20:     menuPic[3] = {20, 300, txLoadImage ("pictures/defense/ad.bmp"), 120, 120, 155, 215, false, "защитные здания"};
+     21:     menuPic[4] = {20, 500, txLoadImage ("pictures/defense/dolbit.bmp"), 120, 120, 159, 190, false, "защитные здания"};
+     22:     menuPic[5] = {120, 100, txLoadImage ("pictures/defense/gun2.bmp"), 120, 120, 82, 78, false, "защитные здания"};
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int main() at D:\проекты и другое\clashofclans-main\main.cpp (20):
+
+     18:     menuPic[1] = {20, 300, txLoadImage ("pictures/build/bilder.bmp"), 54, 63, 54, 63, false, "обычные здания"};
+     19:     menuPic[2] = {20, 100, txLoadImage ("pictures/defense/zabor.bmp"), 120, 120, 238, 212, false, "защитные здания"};
+=>   20:     menuPic[3] = {20, 300, txLoadImage ("pictures/defense/ad.bmp"), 120, 120, 155, 215, false, "защитные здания"};
+     21:     menuPic[4] = {20, 500, txLoadImage ("pictures/defense/dolbit.bmp"), 120, 120, 159, 190, false, "защитные здания"};
+     22:     menuPic[5] = {120, 100, txLoadImage ("pictures/defense/gun2.bmp"), 120, 120, 82, 78, false, "защитные здания"};
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 23 2023 20:07:51, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 23 2023 20:07:55
+
+Run file:	D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00401433 в функции __exchange_and_add() в файле d:/program/codeblocks/mingw/include/c++/4.8.1/ext/atomicity.h на строке 47. Попытка записать данные по адресу 0x004CD81E в модуле D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005082FC (32-bit), Flags: CMdRe0, Thread: 0x4EC8 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00401433 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: __exchange_and_add() at d:/program/codeblocks/mingw/include/c++/4.8.1/ext/atomicity.h (47):
+
+     45:   static inline _Atomic_word 
+     46:   __exchange_and_add(volatile _Atomic_word* __mem, int __val)
+=>   47:   { return __atomic_fetch_add(__mem, __val, __ATOMIC_ACQ_REL); }
+     48: 
+     49:   static inline void
+
+# 1 0x004014A5 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: __exchange_and_add_dispatch() at d:/program/codeblocks/mingw/include/c++/4.8.1/ext/atomicity.h (80):
+
+     78: #ifdef __GTHREADS
+     79:     if (__gthread_active_p())
+=>   80:       return __exchange_and_add(__mem, __val);
+     81:     else
+     82:       return __exchange_and_add_single(__mem, __val);
+
+# 2 0x00480CDA in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: _M_dispose() at d:/program/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 3 0x00488BD3 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe at d:/program/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 4 0x0044C9BA in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe at d:/program/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 5 0x0042C471 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: main() at D:/проекты и другое/clashofclans-main/main.cpp (20):
+
+     18:     menuPic[1] = {20, 300, txLoadImage ("pictures/build/bilder.bmp"), 54, 63, 54, 63, false, "обычные здания"};
+     19:     menuPic[2] = {20, 100, txLoadImage ("pictures/defense/zabor.bmp"), 120, 120, 238, 212, false, "защитные здания"};
+=>   20:     menuPic[3] = {20, 300, txLoadImage ("pictures/defense/ad.bmp"), 120, 120, 155, 215, false, "защитные здания"};
+     21:     menuPic[4] = {20, 500, txLoadImage ("pictures/defense/dolbit.bmp"), 120, 120, 159, 190, false, "защитные здания"};
+     22:     menuPic[5] = {120, 100, txLoadImage ("pictures/defense/gun2.bmp"), 120, 120, 82, 78, false, "защитные здания"};
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int main() at D:\проекты и другое\clashofclans-main\main.cpp (20):
+
+     18:     menuPic[1] = {20, 300, txLoadImage ("pictures/build/bilder.bmp"), 54, 63, 54, 63, false, "обычные здания"};
+     19:     menuPic[2] = {20, 100, txLoadImage ("pictures/defense/zabor.bmp"), 120, 120, 238, 212, false, "защитные здания"};
+=>   20:     menuPic[3] = {20, 300, txLoadImage ("pictures/defense/ad.bmp"), 120, 120, 155, 215, false, "защитные здания"};
+     21:     menuPic[4] = {20, 500, txLoadImage ("pictures/defense/dolbit.bmp"), 120, 120, 159, 190, false, "защитные здания"};
+     22:     menuPic[5] = {120, 100, txLoadImage ("pictures/defense/gun2.bmp"), 120, 120, 82, 78, false, "защитные здания"};
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 23 2023 20:07:51, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 23 2023 20:07:54
+
+Run file:	D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00401433 в функции __exchange_and_add() в файле d:/program/codeblocks/mingw/include/c++/4.8.1/ext/atomicity.h на строке 47. Попытка записать данные по адресу 0x004CD81E в модуле D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005082FC (32-bit), Flags: CMdRe0, Thread: 0x2594 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00401433 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: __exchange_and_add() at d:/program/codeblocks/mingw/include/c++/4.8.1/ext/atomicity.h (47):
+
+     45:   static inline _Atomic_word 
+     46:   __exchange_and_add(volatile _Atomic_word* __mem, int __val)
+=>   47:   { return __atomic_fetch_add(__mem, __val, __ATOMIC_ACQ_REL); }
+     48: 
+     49:   static inline void
+
+# 1 0x004014A5 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: __exchange_and_add_dispatch() at d:/program/codeblocks/mingw/include/c++/4.8.1/ext/atomicity.h (80):
+
+     78: #ifdef __GTHREADS
+     79:     if (__gthread_active_p())
+=>   80:       return __exchange_and_add(__mem, __val);
+     81:     else
+     82:       return __exchange_and_add_single(__mem, __val);
+
+# 2 0x00480CDA in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: _M_dispose() at d:/program/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 3 0x00488BD3 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe at d:/program/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 4 0x0044C9BA in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe at d:/program/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 5 0x0042C471 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: main() at D:/проекты и другое/clashofclans-main/main.cpp (20):
+
+     18:     menuPic[1] = {20, 300, txLoadImage ("pictures/build/bilder.bmp"), 54, 63, 54, 63, false, "обычные здания"};
+     19:     menuPic[2] = {20, 100, txLoadImage ("pictures/defense/zabor.bmp"), 120, 120, 238, 212, false, "защитные здания"};
+=>   20:     menuPic[3] = {20, 300, txLoadImage ("pictures/defense/ad.bmp"), 120, 120, 155, 215, false, "защитные здания"};
+     21:     menuPic[4] = {20, 500, txLoadImage ("pictures/defense/dolbit.bmp"), 120, 120, 159, 190, false, "защитные здания"};
+     22:     menuPic[5] = {120, 100, txLoadImage ("pictures/defense/gun2.bmp"), 120, 120, 82, 78, false, "защитные здания"};
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int main() at D:\проекты и другое\clashofclans-main\main.cpp (20):
+
+     18:     menuPic[1] = {20, 300, txLoadImage ("pictures/build/bilder.bmp"), 54, 63, 54, 63, false, "обычные здания"};
+     19:     menuPic[2] = {20, 100, txLoadImage ("pictures/defense/zabor.bmp"), 120, 120, 238, 212, false, "защитные здания"};
+=>   20:     menuPic[3] = {20, 300, txLoadImage ("pictures/defense/ad.bmp"), 120, 120, 155, 215, false, "защитные здания"};
+     21:     menuPic[4] = {20, 500, txLoadImage ("pictures/defense/dolbit.bmp"), 120, 120, 159, 190, false, "защитные здания"};
+     22:     menuPic[5] = {120, 100, txLoadImage ("pictures/defense/gun2.bmp"), 120, 120, 82, 78, false, "защитные здания"};
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 23 2023 20:08:08, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 23 2023 20:08:13
+
+Run file:	D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00401433 в функции __exchange_and_add() в файле d:/program/codeblocks/mingw/include/c++/4.8.1/ext/atomicity.h на строке 47. Попытка записать данные по адресу 0x004CD81E в модуле D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005082FC (32-bit), Flags: CMdRe0, Thread: 0x2594 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00401433 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: __exchange_and_add() at d:/program/codeblocks/mingw/include/c++/4.8.1/ext/atomicity.h (47):
+
+     45:   static inline _Atomic_word 
+     46:   __exchange_and_add(volatile _Atomic_word* __mem, int __val)
+=>   47:   { return __atomic_fetch_add(__mem, __val, __ATOMIC_ACQ_REL); }
+     48: 
+     49:   static inline void
+
+# 1 0x004014A5 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: __exchange_and_add_dispatch() at d:/program/codeblocks/mingw/include/c++/4.8.1/ext/atomicity.h (80):
+
+     78: #ifdef __GTHREADS
+     79:     if (__gthread_active_p())
+=>   80:       return __exchange_and_add(__mem, __val);
+     81:     else
+     82:       return __exchange_and_add_single(__mem, __val);
+
+# 2 0x00480CDA in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: _M_dispose() at d:/program/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 3 0x00488BD3 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe at d:/program/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 4 0x0044C9BA in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe at d:/program/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 5 0x0042C471 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: main() at D:/проекты и другое/clashofclans-main/main.cpp (20):
+
+     18:     menuPic[1] = {20, 300, txLoadImage ("pictures/build/bilder.bmp"), 54, 63, 54, 63, false, "обычные здания"};
+     19:     menuPic[2] = {20, 100, txLoadImage ("pictures/defense/zabor.bmp"), 120, 120, 238, 212, false, "защитные здания"};
+=>   20:     menuPic[3] = {20, 300, txLoadImage ("pictures/defense/ad.bmp"), 120, 120, 155, 215, false, "защитные здания"};
+     21:     menuPic[4] = {20, 500, txLoadImage ("pictures/defense/dolbit.bmp"), 120, 120, 159, 190, false, "защитные здания"};
+     22:     menuPic[5] = {120, 100, txLoadImage ("pictures/defense/gun2.bmp"), 120, 120, 82, 78, false, "защитные здания"};
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int main() at D:\проекты и другое\clashofclans-main\main.cpp (20):
+
+     18:     menuPic[1] = {20, 300, txLoadImage ("pictures/build/bilder.bmp"), 54, 63, 54, 63, false, "обычные здания"};
+     19:     menuPic[2] = {20, 100, txLoadImage ("pictures/defense/zabor.bmp"), 120, 120, 238, 212, false, "защитные здания"};
+=>   20:     menuPic[3] = {20, 300, txLoadImage ("pictures/defense/ad.bmp"), 120, 120, 155, 215, false, "защитные здания"};
+     21:     menuPic[4] = {20, 500, txLoadImage ("pictures/defense/dolbit.bmp"), 120, 120, 159, 190, false, "защитные здания"};
+     22:     menuPic[5] = {120, 100, txLoadImage ("pictures/defense/gun2.bmp"), 120, 120, 82, 78, false, "защитные здания"};
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 23 2023 20:08:08, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 23 2023 20:08:12
+
+Run file:	D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00401433 в функции __exchange_and_add() в файле d:/program/codeblocks/mingw/include/c++/4.8.1/ext/atomicity.h на строке 47. Попытка записать данные по адресу 0x004CD81E в модуле D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005082FC (32-bit), Flags: CMdRe0, Thread: 0x4E58 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00401433 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: __exchange_and_add() at d:/program/codeblocks/mingw/include/c++/4.8.1/ext/atomicity.h (47):
+
+     45:   static inline _Atomic_word 
+     46:   __exchange_and_add(volatile _Atomic_word* __mem, int __val)
+=>   47:   { return __atomic_fetch_add(__mem, __val, __ATOMIC_ACQ_REL); }
+     48: 
+     49:   static inline void
+
+# 1 0x004014A5 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: __exchange_and_add_dispatch() at d:/program/codeblocks/mingw/include/c++/4.8.1/ext/atomicity.h (80):
+
+     78: #ifdef __GTHREADS
+     79:     if (__gthread_active_p())
+=>   80:       return __exchange_and_add(__mem, __val);
+     81:     else
+     82:       return __exchange_and_add_single(__mem, __val);
+
+# 2 0x00480CDA in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: _M_dispose() at d:/program/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 3 0x00488BD3 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe at d:/program/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 4 0x0044C9BA in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe at d:/program/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 5 0x0042C471 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: main() at D:/проекты и другое/clashofclans-main/main.cpp (20):
+
+     18:     menuPic[1] = {20, 300, txLoadImage ("pictures/build/bilder.bmp"),  54,  63,  54,  63,  false, "обычные здания"};
+     19:     menuPic[2] = {20, 100, txLoadImage ("pictures/defense/zabor.bmp"), 120, 120, 238, 212, false, "защитные здания"};
+=>   20:     menuPic[3] = {20, 300, txLoadImage ("pictures/defense/ad.bmp"),    120, 120, 155, 215, false, "защитные здания"};
+     21:     menuPic[4] = {20, 500, txLoadImage ("pictures/defense/dolbit.bmp"),120, 120, 159, 190, false, "защитные здания"};
+     22:     menuPic[5] = {120, 100,txLoadImage ("pictures/defense/gun2.bmp"),  120, 120, 82,  78,  false, "защитные здания"};
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int main() at D:\проекты и другое\clashofclans-main\main.cpp (20):
+
+     18:     menuPic[1] = {20, 300, txLoadImage ("pictures/build/bilder.bmp"),  54,  63,  54,  63,  false, "обычные здания"};
+     19:     menuPic[2] = {20, 100, txLoadImage ("pictures/defense/zabor.bmp"), 120, 120, 238, 212, false, "защитные здания"};
+=>   20:     menuPic[3] = {20, 300, txLoadImage ("pictures/defense/ad.bmp"),    120, 120, 155, 215, false, "защитные здания"};
+     21:     menuPic[4] = {20, 500, txLoadImage ("pictures/defense/dolbit.bmp"),120, 120, 159, 190, false, "защитные здания"};
+     22:     menuPic[5] = {120, 100,txLoadImage ("pictures/defense/gun2.bmp"),  120, 120, 82,  78,  false, "защитные здания"};
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 23 2023 20:09:22, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 23 2023 20:09:26
+
+Run file:	D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00401433 в функции __exchange_and_add() в файле d:/program/codeblocks/mingw/include/c++/4.8.1/ext/atomicity.h на строке 47. Попытка записать данные по адресу 0x004CD81E в модуле D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005082FC (32-bit), Flags: CMdRe0, Thread: 0x4E58 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00401433 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: __exchange_and_add() at d:/program/codeblocks/mingw/include/c++/4.8.1/ext/atomicity.h (47):
+
+     45:   static inline _Atomic_word 
+     46:   __exchange_and_add(volatile _Atomic_word* __mem, int __val)
+=>   47:   { return __atomic_fetch_add(__mem, __val, __ATOMIC_ACQ_REL); }
+     48: 
+     49:   static inline void
+
+# 1 0x004014A5 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: __exchange_and_add_dispatch() at d:/program/codeblocks/mingw/include/c++/4.8.1/ext/atomicity.h (80):
+
+     78: #ifdef __GTHREADS
+     79:     if (__gthread_active_p())
+=>   80:       return __exchange_and_add(__mem, __val);
+     81:     else
+     82:       return __exchange_and_add_single(__mem, __val);
+
+# 2 0x00480CDA in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: _M_dispose() at d:/program/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 3 0x00488BD3 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe at d:/program/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 4 0x0044C9BA in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe at d:/program/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 5 0x0042C471 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: main() at D:/проекты и другое/clashofclans-main/main.cpp (20):
+
+     18:     menuPic[1] = {20, 300, txLoadImage ("pictures/build/bilder.bmp"),  54,  63,  54,  63,  false, "обычные здания"};
+     19:     menuPic[2] = {20, 100, txLoadImage ("pictures/defense/zabor.bmp"), 120, 120, 238, 212, false, "защитные здания"};
+=>   20:     menuPic[3] = {20, 300, txLoadImage ("pictures/defense/ad.bmp"),    120, 120, 155, 215, false, "защитные здания"};
+     21:     menuPic[4] = {20, 500, txLoadImage ("pictures/defense/dolbit.bmp"),120, 120, 159, 190, false, "защитные здания"};
+     22:     menuPic[5] = {120, 100,txLoadImage ("pictures/defense/gun2.bmp"),  120, 120, 82,  78,  false, "защитные здания"};
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int main() at D:\проекты и другое\clashofclans-main\main.cpp (20):
+
+     18:     menuPic[1] = {20, 300, txLoadImage ("pictures/build/bilder.bmp"),  54,  63,  54,  63,  false, "обычные здания"};
+     19:     menuPic[2] = {20, 100, txLoadImage ("pictures/defense/zabor.bmp"), 120, 120, 238, 212, false, "защитные здания"};
+=>   20:     menuPic[3] = {20, 300, txLoadImage ("pictures/defense/ad.bmp"),    120, 120, 155, 215, false, "защитные здания"};
+     21:     menuPic[4] = {20, 500, txLoadImage ("pictures/defense/dolbit.bmp"),120, 120, 159, 190, false, "защитные здания"};
+     22:     menuPic[5] = {120, 100,txLoadImage ("pictures/defense/gun2.bmp"),  120, 120, 82,  78,  false, "защитные здания"};
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 23 2023 20:09:22, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 23 2023 20:09:27
+
+Run file:	D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe, файл: d:\program\codeblocks\mingw\include\txlib.h, строка: 10851, функция: bool {anonymous}::TX::_txBuffer_Delete(HDC__**),
+
+Сообщение: Параметр "*dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005082FC (32-bit), Flags: CMdRe0, Thread: 0x1F74 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041075E in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: _txBuffer_Delete() at d:/program/codeblocks/mingw/include/txlib.h (10851)
+# 1 0x00421DB7 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: txDeleteDC() at d:/program/codeblocks/mingw/include/txlib.h (13597)
+# 2 0x00422027 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: txDeleteDC() at d:/program/codeblocks/mingw/include/txlib.h (13619)
+
+# 3 0x0042D3CC in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: main() at D:/проекты и другое/clashofclans-main/main.cpp (177):
+
+    175:     for (int i=0; i<count_pic; i++)
+    176:     {
+=>  177:         txDeleteDC(centrPic[i].pic);
+    178:     }
+    179: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txBuffer_Delete(HDC__**) at d:\program\codeblocks\mingw\include\txlib.h (10851):
+
+  10849: $1  if (_TX_ARGUMENT_FAILED (dc)) return false;
+  10850: $   if (                   !*dc)  return false;
+=>10851: $   if (_TX_HDC_FAILED     (*dc)) return false;
+  10852: 
+  10853: $   if (!Win32::GetObjectType (Win32::GetCurrentObject (*dc, OBJ_BITMAP))) return false;
+
+# 1 in bool {anonymous}::TX::txDeleteDC(HDC__**) at d:\program\codeblocks\mingw\include\txlib.h (13597):
+
+  13595: 
+  13596: $   HDC  dc = *pdc;
+=>13597: $   bool ok = _txBuffer_Delete (pdc);
+  13598: $   if (!ok) return false;
+  13599: 
+
+# 2 in bool {anonymous}::TX::txDeleteDC(HDC) at d:\program\codeblocks\mingw\include\txlib.h (13619):
+
+  13617: bool txDeleteDC (HDC dc)
+  13618:     {
+=>13619: $1  return txDeleteDC (&dc);
+  13620:     }
+  13621: 
+
+# 3 in int main() at D:\проекты и другое\clashofclans-main\main.cpp (177):
+
+    175:     for (int i=0; i<count_pic; i++)
+    176:     {
+=>  177:         txDeleteDC(centrPic[i].pic);
+    178:     }
+    179: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 23 2023 20:09:45, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 23 2023 20:09:50
+
+Run file:	D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe, файл: d:\program\codeblocks\mingw\include\txlib.h, строка: 10851, функция: bool {anonymous}::TX::_txBuffer_Delete(HDC__**),
+
+Сообщение: Параметр "*dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005082FC (32-bit), Flags: CMdRe0, Thread: 0x5504 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041075E in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: _txBuffer_Delete() at d:/program/codeblocks/mingw/include/txlib.h (10851)
+# 1 0x00421DB7 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: txDeleteDC() at d:/program/codeblocks/mingw/include/txlib.h (13597)
+# 2 0x00422027 in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: txDeleteDC() at d:/program/codeblocks/mingw/include/txlib.h (13619)
+
+# 3 0x0042D3CC in D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe: main() at D:/проекты и другое/clashofclans-main/main.cpp (177):
+
+    175:     for (int i=0; i<count_pic; i++)
+    176:     {
+=>  177:         txDeleteDC(centrPic[i].pic);
+    178:     }
+    179: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txBuffer_Delete(HDC__**) at d:\program\codeblocks\mingw\include\txlib.h (10851):
+
+  10849: $1  if (_TX_ARGUMENT_FAILED (dc)) return false;
+  10850: $   if (                   !*dc)  return false;
+=>10851: $   if (_TX_HDC_FAILED     (*dc)) return false;
+  10852: 
+  10853: $   if (!Win32::GetObjectType (Win32::GetCurrentObject (*dc, OBJ_BITMAP))) return false;
+
+# 1 in bool {anonymous}::TX::txDeleteDC(HDC__**) at d:\program\codeblocks\mingw\include\txlib.h (13597):
+
+  13595: 
+  13596: $   HDC  dc = *pdc;
+=>13597: $   bool ok = _txBuffer_Delete (pdc);
+  13598: $   if (!ok) return false;
+  13599: 
+
+# 2 in bool {anonymous}::TX::txDeleteDC(HDC) at d:\program\codeblocks\mingw\include\txlib.h (13619):
+
+  13617: bool txDeleteDC (HDC dc)
+  13618:     {
+=>13619: $1  return txDeleteDC (&dc);
+  13620:     }
+  13621: 
+
+# 3 in int main() at D:\проекты и другое\clashofclans-main\main.cpp (177):
+
+    175:     for (int i=0; i<count_pic; i++)
+    176:     {
+=>  177:         txDeleteDC(centrPic[i].pic);
+    178:     }
+    179: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 27 2023 18:25:31, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 27 2023 18:25:47
+
+Run file:	D:\проекты и другое\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe, файл: d:\codeblocks\mingw\include\txlib.h, строка: 10851, функция: bool {anonymous}::TX::_txBuffer_Delete(HDC__**),
+
+Сообщение: Параметр "*dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005082FC (32-bit), Flags: CMdRe0, Thread: 0x1518 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041075E in D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe: _txBuffer_Delete() at d:/codeblocks/mingw/include/txlib.h (10851)
+# 1 0x00421DB7 in D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe: txDeleteDC() at d:/codeblocks/mingw/include/txlib.h (13597)
+# 2 0x00422027 in D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe: txDeleteDC() at d:/codeblocks/mingw/include/txlib.h (13619)
+
+# 3 0x0042D5E5 in D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe: main() at D:/пономарёв александр/clashofclans-main/clashofclans-main/main.cpp (188):
+
+    186:     for (int i=0; i<count_pic; i++)
+    187:     {
+=>  188:         txDeleteDC(centrPic[i].pic);
+    189:     }
+    190: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txBuffer_Delete(HDC__**) at d:\codeblocks\mingw\include\txlib.h (10851):
+
+  10849: $1  if (_TX_ARGUMENT_FAILED (dc)) return false;
+  10850: $   if (                   !*dc)  return false;
+=>10851: $   if (_TX_HDC_FAILED     (*dc)) return false;
+  10852: 
+  10853: $   if (!Win32::GetObjectType (Win32::GetCurrentObject (*dc, OBJ_BITMAP))) return false;
+
+# 1 in bool {anonymous}::TX::txDeleteDC(HDC__**) at d:\codeblocks\mingw\include\txlib.h (13597):
+
+  13595: 
+  13596: $   HDC  dc = *pdc;
+=>13597: $   bool ok = _txBuffer_Delete (pdc);
+  13598: $   if (!ok) return false;
+  13599: 
+
+# 2 in bool {anonymous}::TX::txDeleteDC(HDC) at d:\codeblocks\mingw\include\txlib.h (13619):
+
+  13617: bool txDeleteDC (HDC dc)
+  13618:     {
+=>13619: $1  return txDeleteDC (&dc);
+  13620:     }
+  13621: 
+
+# 3 in int main() at D:\пономарёв александр\clashofclans-main\clashofclans-main\main.cpp (188):
+
+    186:     for (int i=0; i<count_pic; i++)
+    187:     {
+=>  188:         txDeleteDC(centrPic[i].pic);
+    189:     }
+    190: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 30 2023 19:56:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 30 2023 19:56:22
+
+Run file:	D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\пономарёв александр\clashofclans-main\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe, файл: d:\codeblocks\mingw\include\txlib.h, строка: 10851, функция: bool {anonymous}::TX::_txBuffer_Delete(HDC__**),
+
+Сообщение: Параметр "*dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005082FC (32-bit), Flags: CMdRe0, Thread: 0x2120 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041075E in D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe: _txBuffer_Delete() at d:/codeblocks/mingw/include/txlib.h (10851)
+# 1 0x00421DB7 in D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe: txDeleteDC() at d:/codeblocks/mingw/include/txlib.h (13597)
+# 2 0x00422027 in D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe: txDeleteDC() at d:/codeblocks/mingw/include/txlib.h (13619)
+
+# 3 0x0042D5E5 in D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe: main() at D:/пономарёв александр/clashofclans-main/clashofclans-main/main.cpp (188):
+
+    186:     for (int i=0; i<count_pic; i++)
+    187:     {
+=>  188:         txDeleteDC(centrPic[i].pic);
+    189:     }
+    190: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txBuffer_Delete(HDC__**) at d:\codeblocks\mingw\include\txlib.h (10851):
+
+  10849: $1  if (_TX_ARGUMENT_FAILED (dc)) return false;
+  10850: $   if (                   !*dc)  return false;
+=>10851: $   if (_TX_HDC_FAILED     (*dc)) return false;
+  10852: 
+  10853: $   if (!Win32::GetObjectType (Win32::GetCurrentObject (*dc, OBJ_BITMAP))) return false;
+
+# 1 in bool {anonymous}::TX::txDeleteDC(HDC__**) at d:\codeblocks\mingw\include\txlib.h (13597):
+
+  13595: 
+  13596: $   HDC  dc = *pdc;
+=>13597: $   bool ok = _txBuffer_Delete (pdc);
+  13598: $   if (!ok) return false;
+  13599: 
+
+# 2 in bool {anonymous}::TX::txDeleteDC(HDC) at d:\codeblocks\mingw\include\txlib.h (13619):
+
+  13617: bool txDeleteDC (HDC dc)
+  13618:     {
+=>13619: $1  return txDeleteDC (&dc);
+  13620:     }
+  13621: 
+
+# 3 in int main() at D:\пономарёв александр\clashofclans-main\clashofclans-main\main.cpp (188):
+
+    186:     for (int i=0; i<count_pic; i++)
+    187:     {
+=>  188:         txDeleteDC(centrPic[i].pic);
+    189:     }
+    190: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 30 2023 19:56:53, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 30 2023 19:57:13
+
+Run file:	D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\пономарёв александр\clashofclans-main\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe, файл: d:\codeblocks\mingw\include\txlib.h, строка: 10851, функция: bool {anonymous}::TX::_txBuffer_Delete(HDC__**),
+
+Сообщение: Параметр "*dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005082FC (32-bit), Flags: CMdRe0, Thread: 0x704 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041075E in D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe: _txBuffer_Delete() at d:/codeblocks/mingw/include/txlib.h (10851)
+# 1 0x00421DB7 in D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe: txDeleteDC() at d:/codeblocks/mingw/include/txlib.h (13597)
+# 2 0x00422027 in D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe: txDeleteDC() at d:/codeblocks/mingw/include/txlib.h (13619)
+
+# 3 0x0042D5E5 in D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe: main() at D:/пономарёв александр/clashofclans-main/clashofclans-main/main.cpp (188):
+
+    186:     for (int i=0; i<count_pic; i++)
+    187:     {
+=>  188:         txDeleteDC(centrPic[i].pic);
+    189:     }
+    190: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txBuffer_Delete(HDC__**) at d:\codeblocks\mingw\include\txlib.h (10851):
+
+  10849: $1  if (_TX_ARGUMENT_FAILED (dc)) return false;
+  10850: $   if (                   !*dc)  return false;
+=>10851: $   if (_TX_HDC_FAILED     (*dc)) return false;
+  10852: 
+  10853: $   if (!Win32::GetObjectType (Win32::GetCurrentObject (*dc, OBJ_BITMAP))) return false;
+
+# 1 in bool {anonymous}::TX::txDeleteDC(HDC__**) at d:\codeblocks\mingw\include\txlib.h (13597):
+
+  13595: 
+  13596: $   HDC  dc = *pdc;
+=>13597: $   bool ok = _txBuffer_Delete (pdc);
+  13598: $   if (!ok) return false;
+  13599: 
+
+# 2 in bool {anonymous}::TX::txDeleteDC(HDC) at d:\codeblocks\mingw\include\txlib.h (13619):
+
+  13617: bool txDeleteDC (HDC dc)
+  13618:     {
+=>13619: $1  return txDeleteDC (&dc);
+  13620:     }
+  13621: 
+
+# 3 in int main() at D:\пономарёв александр\clashofclans-main\clashofclans-main\main.cpp (188):
+
+    186:     for (int i=0; i<count_pic; i++)
+    187:     {
+=>  188:         txDeleteDC(centrPic[i].pic);
+    189:     }
+    190: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 30 2023 19:59:00, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 30 2023 19:59:19
+
+Run file:	D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\пономарёв александр\clashofclans-main\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe, файл: d:\codeblocks\mingw\include\txlib.h, строка: 10851, функция: bool {anonymous}::TX::_txBuffer_Delete(HDC__**),
+
+Сообщение: Параметр "*dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005082FC (32-bit), Flags: CMdRe0, Thread: 0x1628 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041075E in D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe: _txBuffer_Delete() at d:/codeblocks/mingw/include/txlib.h (10851)
+# 1 0x00421DB7 in D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe: txDeleteDC() at d:/codeblocks/mingw/include/txlib.h (13597)
+# 2 0x00422027 in D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe: txDeleteDC() at d:/codeblocks/mingw/include/txlib.h (13619)
+
+# 3 0x0042D5E5 in D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe: main() at D:/пономарёв александр/clashofclans-main/clashofclans-main/main.cpp (188):
+
+    186:     for (int i=0; i<100; i++)
+    187:     {
+=>  188:         txDeleteDC(centrPic[i].pic);
+    189:     }
+    190: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txBuffer_Delete(HDC__**) at d:\codeblocks\mingw\include\txlib.h (10851):
+
+  10849: $1  if (_TX_ARGUMENT_FAILED (dc)) return false;
+  10850: $   if (                   !*dc)  return false;
+=>10851: $   if (_TX_HDC_FAILED     (*dc)) return false;
+  10852: 
+  10853: $   if (!Win32::GetObjectType (Win32::GetCurrentObject (*dc, OBJ_BITMAP))) return false;
+
+# 1 in bool {anonymous}::TX::txDeleteDC(HDC__**) at d:\codeblocks\mingw\include\txlib.h (13597):
+
+  13595: 
+  13596: $   HDC  dc = *pdc;
+=>13597: $   bool ok = _txBuffer_Delete (pdc);
+  13598: $   if (!ok) return false;
+  13599: 
+
+# 2 in bool {anonymous}::TX::txDeleteDC(HDC) at d:\codeblocks\mingw\include\txlib.h (13619):
+
+  13617: bool txDeleteDC (HDC dc)
+  13618:     {
+=>13619: $1  return txDeleteDC (&dc);
+  13620:     }
+  13621: 
+
+# 3 in int main() at D:\пономарёв александр\clashofclans-main\clashofclans-main\main.cpp (188):
+
+    186:     for (int i=0; i<100; i++)
+    187:     {
+=>  188:         txDeleteDC(centrPic[i].pic);
+    189:     }
+    190: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 30 2023 20:02:04, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 30 2023 20:02:24
+
+Run file:	D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\пономарёв александр\clashofclans-main\clashofclans-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe, файл: d:\codeblocks\mingw\include\txlib.h, строка: 10851, функция: bool {anonymous}::TX::_txBuffer_Delete(HDC__**),
+
+Сообщение: Параметр "*dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005082FC (32-bit), Flags: CMdRe0, Thread: 0x8B4 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041075E in D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe: _txBuffer_Delete() at d:/codeblocks/mingw/include/txlib.h (10851)
+# 1 0x00421DB7 in D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe: txDeleteDC() at d:/codeblocks/mingw/include/txlib.h (13597)
+# 2 0x00422027 in D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe: txDeleteDC() at d:/codeblocks/mingw/include/txlib.h (13619)
+
+# 3 0x0042D5E5 in D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe: main() at D:/пономарёв александр/clashofclans-main/clashofclans-main/main.cpp (188):
+
+    186:     for (int i=0; i<100; i++)
+    187:     {
+=>  188:         txDeleteDC(centrPic[i].pic);
+    189:     }
+    190: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txBuffer_Delete(HDC__**) at d:\codeblocks\mingw\include\txlib.h (10851):
+
+  10849: $1  if (_TX_ARGUMENT_FAILED (dc)) return false;
+  10850: $   if (                   !*dc)  return false;
+=>10851: $   if (_TX_HDC_FAILED     (*dc)) return false;
+  10852: 
+  10853: $   if (!Win32::GetObjectType (Win32::GetCurrentObject (*dc, OBJ_BITMAP))) return false;
+
+# 1 in bool {anonymous}::TX::txDeleteDC(HDC__**) at d:\codeblocks\mingw\include\txlib.h (13597):
+
+  13595: 
+  13596: $   HDC  dc = *pdc;
+=>13597: $   bool ok = _txBuffer_Delete (pdc);
+  13598: $   if (!ok) return false;
+  13599: 
+
+# 2 in bool {anonymous}::TX::txDeleteDC(HDC) at d:\codeblocks\mingw\include\txlib.h (13619):
+
+  13617: bool txDeleteDC (HDC dc)
+  13618:     {
+=>13619: $1  return txDeleteDC (&dc);
+  13620:     }
+  13621: 
+
+# 3 in int main() at D:\пономарёв александр\clashofclans-main\clashofclans-main\main.cpp (188):
+
+    186:     for (int i=0; i<100; i++)
+    187:     {
+=>  188:         txDeleteDC(centrPic[i].pic);
+    189:     }
+    190: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 30 2023 20:05:05, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 30 2023 20:05:25
+
+Run file:	D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\clash.exe
+Directory:	D:\пономарёв александр\clashofclans-main\clashofclans-main
+
+--------------------------------------------------
