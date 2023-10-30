@@ -1,4 +1,9 @@
 #include "TXLib.h"
+#include <fstream>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
+
 struct Picture
 {
     int x;
@@ -28,4 +33,31 @@ struct Picture
 }
 
 };
+
+
+int get_w(string adress)
+{
+    FILE *f1 = fopen(adress.c_str(), "rb");
+
+    unsigned char headerinfo[54];
+
+    fread(headerinfo, sizeof(unsigned char), 54, f1);
+
+    int w = *(int *)&headerinfo[18];
+
+    return w;
+}
+
+int get_h(string adress)
+{
+    FILE *f1 = fopen(adress.c_str(), "rb");
+
+    unsigned char headerinfo[54];
+
+    fread(headerinfo, sizeof(unsigned char), 54, f1);
+
+    int h = *(int *)&headerinfo[22];
+
+    return h;
+}
 

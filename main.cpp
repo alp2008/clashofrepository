@@ -15,11 +15,11 @@ int main()
 
     Picture menuPic[count_pic];
     menuPic[0] = {20, 100, "pictures/build/ratusha.bmp",    txLoadImage ("pictures/build/ratusha.bmp"), 120, 120, 225, 225};
-    menuPic[1] = {20, 300, "pictures/build/bilder.bmp",     txLoadImage ("pictures/build/bilder.bmp"),  54,  63,  54,  63};
+    menuPic[1] = {20, 300, "pictures/build/bilder.bmp",     txLoadImage ("pictures/build/bilder.bmp"),  54,  63,  54,  63 };
     menuPic[2] = {20, 100, "pictures/defense/zabor.bmp",    txLoadImage ("pictures/defense/zabor.bmp"), 120, 120, 238, 212};
     menuPic[3] = {20, 300, "pictures/defense/ad.bmp",       txLoadImage ("pictures/defense/ad.bmp"),    120, 120, 155, 215};
     menuPic[4] = {20, 500, "pictures/defense/dolbit.bmp",   txLoadImage ("pictures/defense/dolbit.bmp"),120, 120, 159, 190};
-    menuPic[5] = {120,100, "pictures/defense/gun2.bmp",     txLoadImage ("pictures/defense/gun2.bmp"),  120, 120, 82,  78};
+    menuPic[5] = {120,100, "pictures/defense/gun2.bmp",     txLoadImage ("pictures/defense/gun2.bmp"),  120, 120, 82,  78 };
     menuPic[6] = {120,300, "pictures/defense/negr.bmp",     txLoadImage ("pictures/defense/negr.bmp"),  120, 120, 760, 760};
     menuPic[7] = {120,500, "pictures/defense/tesla.bmp",    txLoadImage ("pictures/defense/tesla.bmp"), 120, 120, 170, 192};
 
@@ -183,7 +183,7 @@ int main()
     {
         txDeleteDC(menuPic[i].pic);
     }
-    for (int i=0; i<100; i++)
+    for (int i=0; i<count_pic; i++)
     {
         txDeleteDC(centrPic[i].pic);
     }
