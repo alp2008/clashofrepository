@@ -4,77 +4,85 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 <body>
 <tt>
-Build started on: <u>30-10-2023 at 20:05.04</u><br />
-Build ended on: <u>30-10-2023 at 20:05.18</u><p />
+Build started on: <u>31-10-2023 at 20:57.31</u><br />
+Build ended on: <u>31-10-2023 at 20:57.35</u><p />
 <b>-------------- Build: Debug in clash (compiler: NOT FOR PROJECTS! = MinGW GCC + Strict + Fast + Save (Requires Git))---------------</b><br />
-g++git-auto.bat "D:\пономарёв александр\clashofclans-main\clashofclans-main\main.cpp" -o bin\Debug\clash.exe -mwindows  -Wall -fexceptions  -g  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC<br />
+g++git-auto.bat "D:\проекты и другое\clashofrepository-main\main.cpp" -o bin\Debug\clash.exe -mwindows  -Wall -fexceptions  -g  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC<br />
 ------------------------------------------------------------------------------------------------------<br />
 Compilation ERRORS:<br />
 <br />
-In file included from D:\пономарёв александр\clashofclans-main\clashofclans-main\main.cpp:2:0:<br />
-D:\пономарёв александр\clashofclans-main\clashofclans-main\button.cpp: In constructor 'Button::Button()':<br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\button.cpp:2:8: warning: 'Button::x' should be initialized in the member initialization list [-Weffc++]</font><br />
+D:\проекты и другое\clashofrepository-main\main.cpp: In function 'int get_w(std::string)':<br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\main.cpp:8:5: warning: no previous declaration for 'int get_w(std::string)' [-Wmissing-declarations]</font><br />
+ int get_w(string adress)<br />
+     ^<br />
+D:\проекты и другое\clashofrepository-main\main.cpp: In function 'int get_h(std::string)':<br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\main.cpp:18:5: warning: no previous declaration for 'int get_h(std::string)' [-Wmissing-declarations]</font><br />
+ int get_h(string adress)<br />
+     ^<br />
+In file included from D:\проекты и другое\clashofrepository-main\main.cpp:2:0:<br />
+D:\проекты и другое\clashofrepository-main\button.cpp: In constructor 'Button::Button()':<br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\button.cpp:2:8: warning: 'Button::x' should be initialized in the member initialization list [-Weffc++]</font><br />
  struct Button<br />
         ^<br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\button.cpp:2:8: warning: 'Button::name' should be initialized in the member initialization list [-Weffc++]</font><br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\button.cpp:2:8: warning: 'Button::category' should be initialized in the member initialization list [-Weffc++]</font><br />
-D:\пономарёв александр\clashofclans-main\clashofclans-main\main.cpp: In function 'int main()':<br />
-D:\пономарёв александр\clashofclans-main\clashofclans-main\main.cpp:11:25: note: synthesized method 'Button::Button()' first required here <br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\button.cpp:2:8: warning: 'Button::name' should be initialized in the member initialization list [-Weffc++]</font><br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\button.cpp:2:8: warning: 'Button::category' should be initialized in the member initialization list [-Weffc++]</font><br />
+D:\проекты и другое\clashofrepository-main\main.cpp: In function 'int main()':<br />
+D:\проекты и другое\clashofrepository-main\main.cpp:35:25: note: synthesized method 'Button::Button()' first required here <br />
      Button btn[count_btn];<br />
                          ^<br />
-In file included from D:\пономарёв александр\clashofclans-main\clashofclans-main\main.cpp:3:0:<br />
-D:\пономарёв александр\clashofclans-main\clashofclans-main\picture.cpp: In constructor 'Picture::Picture()':<br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\picture.cpp:2:8: warning: 'Picture::x' should be initialized in the member initialization list [-Weffc++]</font><br />
+In file included from D:\проекты и другое\clashofrepository-main\main.cpp:3:0:<br />
+D:\проекты и другое\clashofrepository-main\picture.cpp: In constructor 'Picture::Picture()':<br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\picture.cpp:7:8: warning: 'Picture::x' should be initialized in the member initialization list [-Weffc++]</font><br />
  struct Picture<br />
         ^<br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\picture.cpp:2:8: warning: 'Picture::y' should be initialized in the member initialization list [-Weffc++]</font><br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\picture.cpp:2:8: warning: 'Picture::adress' should be initialized in the member initialization list [-Weffc++]</font><br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\picture.cpp:2:8: warning: 'Picture::pic' should be initialized in the member initialization list [-Weffc++]</font><br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\picture.cpp:2:8: warning: 'Picture::w_scr' should be initialized in the member initialization list [-Weffc++]</font><br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\picture.cpp:2:8: warning: 'Picture::h_scr' should be initialized in the member initialization list [-Weffc++]</font><br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\picture.cpp:2:8: warning: 'Picture::w' should be initialized in the member initialization list [-Weffc++]</font><br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\picture.cpp:2:8: warning: 'Picture::h' should be initialized in the member initialization list [-Weffc++]</font><br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\picture.cpp:2:8: warning: 'Picture::visible' should be initialized in the member initialization list [-Weffc++]</font><br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\picture.cpp:2:8: warning: 'Picture::category' should be initialized in the member initialization list [-Weffc++]</font><br />
-D:\пономарёв александр\clashofclans-main\clashofclans-main\main.cpp: In function 'int main()':<br />
-D:\пономарёв александр\clashofclans-main\clashofclans-main\main.cpp:16:30: note: synthesized method 'Picture::Picture()' first required here <br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\picture.cpp:7:8: warning: 'Picture::y' should be initialized in the member initialization list [-Weffc++]</font><br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\picture.cpp:7:8: warning: 'Picture::adress' should be initialized in the member initialization list [-Weffc++]</font><br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\picture.cpp:7:8: warning: 'Picture::pic' should be initialized in the member initialization list [-Weffc++]</font><br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\picture.cpp:7:8: warning: 'Picture::w_scr' should be initialized in the member initialization list [-Weffc++]</font><br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\picture.cpp:7:8: warning: 'Picture::h_scr' should be initialized in the member initialization list [-Weffc++]</font><br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\picture.cpp:7:8: warning: 'Picture::w' should be initialized in the member initialization list [-Weffc++]</font><br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\picture.cpp:7:8: warning: 'Picture::h' should be initialized in the member initialization list [-Weffc++]</font><br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\picture.cpp:7:8: warning: 'Picture::visible' should be initialized in the member initialization list [-Weffc++]</font><br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\picture.cpp:7:8: warning: 'Picture::category' should be initialized in the member initialization list [-Weffc++]</font><br />
+D:\проекты и другое\clashofrepository-main\main.cpp: In function 'int main()':<br />
+D:\проекты и другое\clashofrepository-main\main.cpp:40:30: note: synthesized method 'Picture::Picture()' first required here <br />
      Picture menuPic[count_pic];<br />
                               ^<br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\main.cpp:80:17: warning: declaration of 'npic' shadows a previous local [-Wshadow]</font><br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\main.cpp:110:17: warning: declaration of 'npic' shadows a previous local [-Wshadow]</font><br />
          for(int npic=0; npic&lt;count_pic; npic++)<br />
                  ^<br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\main.cpp:41:9: warning: shadowed declaration is here [-Wshadow]</font><br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\main.cpp:71:9: warning: shadowed declaration is here [-Wshadow]</font><br />
      int npic = 0;<br />
          ^<br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\main.cpp:151:63: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]</font><br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\main.cpp:181:63: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]</font><br />
                  centrPic[vybor].w_scr = centrPic[vybor].w_scr * 1.1;<br />
                                                                ^<br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\main.cpp:152:63: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]</font><br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\main.cpp:182:63: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]</font><br />
                  centrPic[vybor].h_scr = centrPic[vybor].h_scr * 1.1;<br />
                                                                ^<br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\main.cpp:157:63: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]</font><br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\main.cpp:187:63: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]</font><br />
                  centrPic[vybor].w_scr = centrPic[vybor].w_scr * 0.9;<br />
                                                                ^<br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\main.cpp:158:63: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]</font><br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\main.cpp:188:63: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]</font><br />
                  centrPic[vybor].h_scr = centrPic[vybor].h_scr * 0.9;<br />
                                                                ^<br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\main.cpp:166:48: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]</font><br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\main.cpp:196:48: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]</font><br />
                  centrPic[vybor].x = txMouseX() - centrPic[vybor].w_scr/2;<br />
                                                 ^<br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\main.cpp:167:48: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]</font><br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\main.cpp:197:48: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]</font><br />
                  centrPic[vybor].y = txMouseY() - centrPic[vybor].h_scr/2;<br />
                                                 ^<br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\main.cpp:41:9: warning: unused variable 'npic' [-Wunused-variable]</font><br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\main.cpp:71:9: warning: unused variable 'npic' [-Wunused-variable]</font><br />
      int npic = 0;<br />
          ^<br />
-<font color="#0000ff">D:\пономарёв александр\clashofclans-main\clashofclans-main\main.cpp:194:1: warning: stack usage might be unbounded [-Wstack-usage=]</font><br />
+<font color="#0000ff">D:\проекты и другое\clashofrepository-main\main.cpp:224:1: warning: stack usage might be unbounded [-Wstack-usage=]</font><br />
  }<br />
  ^<br />
 ------------------------------------------------------------------------------------------------------<br />
-Autosaving to the Git repository in D:/ /clashofclans-main/clashofclans-main/.git-auto/... <br />
-Output size is 2,27 MB<br />
-<font color="#0000ff">Process terminated with status 0 (0 minutes, 14 seconds)</font><br />
-<font color="#0000ff">0 errors, 23 warnings (0 minutes, 14 seconds)</font><br />
+Autosaving to the Git repository in D:/  /clashofrepository-main/.git-auto/... <br />
+Output size is 2,28 MB<br />
+<font color="#0000ff">Process terminated with status 0 (0 minutes, 4 seconds)</font><br />
+<font color="#0000ff">0 errors, 25 warnings (0 minutes, 4 seconds)</font><br />
 </tt>
 </body>
 </html>

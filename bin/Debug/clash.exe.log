@@ -1990,3 +1990,79 @@ Run file:	D:\пономарёв александр\clashofclans-main\clashofclans-main\bin\Debug\c
 Directory:	D:\пономарёв александр\clashofclans-main\clashofclans-main
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe, файл: d:\program\codeblocks\mingw\include\txlib.h, строка: 10851, функция: bool {anonymous}::TX::_txBuffer_Delete(HDC__**),
+
+Сообщение: Параметр "*dc" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005082FC (32-bit), Flags: CMdRe0, Thread: 0x2CF4 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041075E in D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe: _txBuffer_Delete() at d:/program/codeblocks/mingw/include/txlib.h (10851)
+# 1 0x00421DB7 in D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe: txDeleteDC() at d:/program/codeblocks/mingw/include/txlib.h (13597)
+# 2 0x00422027 in D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe: txDeleteDC() at d:/program/codeblocks/mingw/include/txlib.h (13619)
+
+# 3 0x0042D6B8 in D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe: main() at D:/проекты и другое/clashofrepository-main/main.cpp (218):
+
+    216:     for (int i=0; i<count_pic; i++)
+    217:     {
+=>  218:         txDeleteDC(centrPic[i].pic);
+    219:     }
+    220: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::_txBuffer_Delete(HDC__**) at d:\program\codeblocks\mingw\include\txlib.h (10851):
+
+  10849: $1  if (_TX_ARGUMENT_FAILED (dc)) return false;
+  10850: $   if (                   !*dc)  return false;
+=>10851: $   if (_TX_HDC_FAILED     (*dc)) return false;
+  10852: 
+  10853: $   if (!Win32::GetObjectType (Win32::GetCurrentObject (*dc, OBJ_BITMAP))) return false;
+
+# 1 in bool {anonymous}::TX::txDeleteDC(HDC__**) at d:\program\codeblocks\mingw\include\txlib.h (13597):
+
+  13595: 
+  13596: $   HDC  dc = *pdc;
+=>13597: $   bool ok = _txBuffer_Delete (pdc);
+  13598: $   if (!ok) return false;
+  13599: 
+
+# 2 in bool {anonymous}::TX::txDeleteDC(HDC) at d:\program\codeblocks\mingw\include\txlib.h (13619):
+
+  13617: bool txDeleteDC (HDC dc)
+  13618:     {
+=>13619: $1  return txDeleteDC (&dc);
+  13620:     }
+  13621: 
+
+# 3 in int main() at D:\проекты и другое\clashofrepository-main\main.cpp (218):
+
+    216:     for (int i=0; i<count_pic; i++)
+    217:     {
+=>  218:         txDeleteDC(centrPic[i].pic);
+    219:     }
+    220: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 31 2023 20:57:31, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 31 2023 20:57:36
+
+Run file:	D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofrepository-main
+
+--------------------------------------------------
