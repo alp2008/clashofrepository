@@ -33,22 +33,24 @@ int main()
     int count_pic=8;
 
     Button btn[count_btn];
-    btn[0] = {50, "обычные здания", "обычные здания"};
-    btn[1] = {250, "защитные здания", "защитные здания"};
-    btn[2] = {450, "ресурсы", "ресурсы"};
+    btn[0] = {50, "обычные здания", "build"};
+    btn[1] = {250, "защитные здания", "defense"};
+    btn[2] = {450, "ресурсы", "resurse"};
 
     Picture menuPic[count_pic];
-    menuPic[0] = {20, 100, "pictures/build/ratusha.bmp",    txLoadImage ("pictures/build/ratusha.bmp")};
-    menuPic[1] = {20, 300, "pictures/build/bilder.bmp",     txLoadImage ("pictures/build/bilder.bmp")};
-    menuPic[2] = {20, 100, "pictures/defense/zabor.bmp",    txLoadImage ("pictures/defense/zabor.bmp")};
-    menuPic[3] = {20, 300, "pictures/defense/ad.bmp",       txLoadImage ("pictures/defense/ad.bmp")};
-    menuPic[4] = {20, 500, "pictures/defense/dolbit.bmp",   txLoadImage ("pictures/defense/dolbit.bmp")};
-    menuPic[5] = {120,100, "pictures/defense/gun2.bmp",     txLoadImage ("pictures/defense/gun2.bmp")};
-    menuPic[6] = {120,300, "pictures/defense/negr.bmp",     txLoadImage ("pictures/defense/negr.bmp")};
-    menuPic[7] = {120,500, "pictures/defense/tesla.bmp",    txLoadImage ("pictures/defense/tesla.bmp")};
+    menuPic[0] = {20, 100, "pictures/build/ratusha.bmp"};
+    menuPic[1] = {20, 300, "pictures/build/bilder.bmp"};
+    menuPic[2] = {20, 100, "pictures/defense/zabor.bmp"};
+    menuPic[3] = {20, 300, "pictures/defense/ad.bmp"};
+    menuPic[4] = {20, 500, "pictures/defense/dolbit.bmp"};
+    menuPic[5] = {120,100, "pictures/defense/gun2.bmp"};
+    menuPic[6] = {120,300, "pictures/defense/negr.bmp"};
+    menuPic[7] = {120,500, "pictures/defense/tesla.bmp"};
 
     for(int i=0; i<count_pic; i++)
     {
+        menuPic[i].pic = txLoadImage(menuPic[i].adress.c_str());
+
         menuPic[i].w = get_w(menuPic[i].adress);
         menuPic[i].h = get_h(menuPic[i].adress);
 
