@@ -2,6 +2,8 @@
 #include "button.cpp"
 #include "picture.cpp"
 #include <fstream>
+#include <stdio.h>
+#include <dirent.h>
 
 using namespace std;
 
@@ -27,6 +29,28 @@ int get_h(string adress)
 
 int main()
 {
+    string adress = "Персонаж";
+
+    DIR *dir;
+    struct dirent *ent;
+    int nFiles = 0;
+    if((dir = opendir (adress.c_str())) != NULL)
+    {
+        while((ent = readdir (dir)) != NULL)
+        {
+            if((string) ent->d_name !="." && (string)ent->d_name !="..")
+            {
+                std::cout << ent->d_name << std::endl;
+                nFiles++;
+            }
+        }
+        closedir (dir);
+    }
+
+    std::cout << nFiles << "files." << std::endl;
+
+    return 0;
+
     txCreateWindow (1200, 700);
     //инициализация кнопок
     int count_btn=3;
