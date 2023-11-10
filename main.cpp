@@ -27,49 +27,62 @@ int get_h(string adress)
     return h;
 }
 
-int main()
+int readFromDir(string adress, Picture menuPic[], int count_pic)
 {
-    string adress = "Персонаж";
-
     DIR *dir;
     struct dirent *ent;
-    int nFiles = 0;
-    if((dir = opendir (adress.c_str())) != NULL)
+    int X = 20;
+    int Y = 100;
+    if ((dir = opendir (adress.c_str())) != NULL)
     {
-        while((ent = readdir (dir)) != NULL)
+      while ((ent = readdir (dir)) != NULL)
+      {
+        if((string)ent->d_name != "." && (string)ent->d_name != "..")
         {
-            if((string) ent->d_name !="." && (string)ent->d_name !="..")
+            if(Y<=550 && X == 20)
             {
-                std::cout << ent->d_name << std::endl;
-                nFiles++;
+                X = 20;
             }
+            else if (Y>550)
+            {
+                X = 120;
+                Y = 100;
+            }
+            menuPic[count_pic].x = X;
+            menuPic[count_pic].y = Y;
+            menuPic[count_pic].adress = adress + (string)ent->d_name;
+            count_pic++;
+            Y += 150;
         }
-        closedir (dir);
+      }
+      closedir (dir);
     }
 
-    std::cout << nFiles << "files." << std::endl;
+    return count_pic;
+}
 
-    return 0;
 
+
+int main()
+{
     txCreateWindow (1200, 700);
     //инициализация кнопок
-    int count_btn=3;
-    int count_pic=8;
+    int count_btn=4;
+    int count_pic=0;
+    char str[100];
 
     Button btn[count_btn];
-    btn[0] = {50, "обычные здания", "build"};
-    btn[1] = {250, "защитные здания", "defense"};
-    btn[2] = {450, "ресурсы", "resurse"};
+    btn[0] = {50, "build", "build"};
+    btn[1] = {250, "defense", "defense"};
+    btn[2] = {450, "resurces", "resurces"};
+    btn[3] = {650, "other", "other"};
 
-    Picture menuPic[count_pic];
-    menuPic[0] = {20, 100, "pictures/build/ratusha.bmp"};
-    menuPic[1] = {20, 300, "pictures/build/bilder.bmp"};
-    menuPic[2] = {20, 100, "pictures/defense/zabor.bmp"};
-    menuPic[3] = {20, 300, "pictures/defense/ad.bmp"};
-    menuPic[4] = {20, 500, "pictures/defense/dolbit.bmp"};
-    menuPic[5] = {120,100, "pictures/defense/gun2.bmp"};
-    menuPic[6] = {120,300, "pictures/defense/negr.bmp"};
-    menuPic[7] = {120,500, "pictures/defense/tesla.bmp"};
+    Picture menuPic[100];
+
+    count_pic = readFromDir("pictures/build", menuPic, count_pic);
+    count_pic = readFromDir("pictures/defense", menuPic, count_pic);
+    count_pic = readFromDir("pictures/resurces", menuPic, count_pic);
+    count_pic = readFromDir("pictures/other", menuPic, count_pic);
 
     for(int i=0; i<count_pic; i++)
     {
@@ -118,7 +131,7 @@ int main()
             centrPic[i].Draw();
         }
 
-        for(int ib=0; ib<count_btn; ib++)
+       for(int ib=0; ib<count_btn; ib++)
         {
             if(btn[ib].Click())
             {
@@ -235,16 +248,16 @@ int main()
         txEnd();
         }
 
-    for (int i=0; i<count_pic; i++)
+    for(int i=0; i<count_pic; i++)
     {
-        txDeleteDC(menuPic[i].pic);
-    }
-    for (int i=0; i<count_pic; i++)
-    {
-        txDeleteDC(centrPic[i].pic);
+        txDeleteDC (menuPic[i].pic);
     }
 
-txDisableAutoPause();
-txTextCursor (false);
+    for(int i=0; i<nCentrPic; i++)
+    {
+        txDeleteDC (centrPic[i].pic);
+    }
+
+
 return 0;
 }

@@ -2,6 +2,8 @@
 #include "button.cpp"
 #include "picture.cpp"
 #include <fstream>
+#include <stdio.h>
+#include <dirent.h>
 
 using namespace std;
 
@@ -25,30 +27,60 @@ int get_h(string adress)
     return h;
 }
 
+int readFromDir(string adress, Picture menuPic[], int count_pic)
+{
+    DIR *dir;
+    struct dirent *ent;
+    if((dir = opendir (adress.c_str())) != NULL)
+    {
+        while((ent = readdir (dir)) != NULL)
+        {
+            if((string) ent->d_name !="." && (string)ent->d_name !="..")
+            {
+                menuPic[count_pic].adress = adress + (string)ent->d_name;
+                count_pic++;
+            }
+        }
+        closedir (dir);
+    }
+
+    return count_pic;
+}
+
+
+
 int main()
 {
     txCreateWindow (1200, 700);
     //инициализация кнопок
-    int count_btn=3;
-    int count_pic=8;
-    
-    Button btn[count_btn];
-    btn[0] = {50, "обычные здания", "обычные здания"};
-    btn[1] = {250, "защитные здания", "защитные здания"};
-    btn[2] = {450, "ресурсы", "ресурсы"};
+    int count_btn=4;
+    int count_pic=0;
 
-    Picture menuPic[count_pic];
-    menuPic[0] = {20, 100, "pictures/build/ratusha.bmp",    txLoadImage ("pictures/build/ratusha.bmp")};
-    menuPic[1] = {20, 300, "pictures/build/bilder.bmp",     txLoadImage ("pictures/build/bilder.bmp")};
-    menuPic[2] = {20, 100, "pictures/defense/zabor.bmp",    txLoadImage ("pictures/defense/zabor.bmp")};
-    menuPic[3] = {20, 300, "pictures/defense/ad.bmp",       txLoadImage ("pictures/defense/ad.bmp")};
-    menuPic[4] = {20, 500, "pictures/defense/dolbit.bmp",   txLoadImage ("pictures/defense/dolbit.bmp")};
-    menuPic[5] = {120,100, "pictures/defense/gun2.bmp",     txLoadImage ("pictures/defense/gun2.bmp")};
-    menuPic[6] = {120,300, "pictures/defense/negr.bmp",     txLoadImage ("pictures/defense/negr.bmp")};
-    menuPic[7] = {120,500, "pictures/defense/tesla.bmp",    txLoadImage ("pictures/defense/tesla.bmp")};
-    
+    Button btn[count_btn];
+    btn[0] = {50, "build", "build"};
+    btn[1] = {250, "defense", "defense"};
+    btn[2] = {450, "resurces", "resurces"};
+    btn[3] = {650, "other", "other"};
+
+    Picture menuPic[100];
+    menuPic[0] = {20, 100, "pictures/build/ratusha.bmp"};
+    menuPic[1] = {20, 300, "pictures/build/bilder.bmp"};
+    menuPic[2] = {20, 100, "pictures/defense/zabor.bmp"};
+    menuPic[3] = {20, 300, "pictures/defense/ad.bmp"};
+    menuPic[4] = {20, 500, "pictures/defense/dolbit.bmp"};
+    menuPic[5] = {120,100, "pictures/defense/gun2.bmp"};
+    menuPic[6] = {120,300, "pictures/defense/negr.bmp"};
+    menuPic[7] = {120,500, "pictures/defense/tesla.bmp"};
+
+    count_pic = readFromDir("pictures/build", menuPic, count_pic);
+    count_pic = readFromDir("pictures/defense", menuPic, count_pic);
+    count_pic = readFromDir("pictures/resurces", menuPic, count_pic);
+    count_pic = readFromDir("pictures/other", menuPic, count_pic);
+
     for(int i=0; i<count_pic; i++)
     {
+        menuPic[i].pic = txLoadImage(menuPic[i].adress.c_str());
+
         menuPic[i].w = get_w(menuPic[i].adress);
         menuPic[i].h = get_h(menuPic[i].adress);
 
@@ -62,7 +94,7 @@ int main()
         int pos2 = str.find("/", pos1+1);
         menuPic[i].category = str.substr(pos1+1, pos2-pos1-1);
     }
-    
+
     Picture centrPic[100];
 
     int vybor = -1;
@@ -92,9 +124,9 @@ int main()
             centrPic[i].Draw();
         }
 
-        for(int ib=0; ib<count_btn; ib++)
+       for(int ib=0; ib<count_btn; ib++)
         {
-            if(btn[ib].Click())
+            if(btn[ib].click())
             {
                 for(int ip=0; ip<count_pic; ip++)
                 {
@@ -209,16 +241,16 @@ int main()
         txEnd();
         }
 
-    for (int i=0; i<count_pic; i++)
+    for(int i=0; i<count_pic; i++)
     {
-        txDeleteDC(menuPic[i].pic);
-    }
-    for (int i=0; i<count_pic; i++)
-    {
-        txDeleteDC(centrPic[i].pic);
+        txDeleteDC (menuPic[i].pic);
     }
 
-txDisableAutoPause();
-txTextCursor (false);
+    for(int i=0; i<nCentrPic; i++)
+    {
+        txDeleteDC (centrPic[i].pic);
+    }
+
+
 return 0;
 }
