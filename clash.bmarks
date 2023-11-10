@@ -5,11 +5,13 @@
 		<Cursor position="114" topLine="0" />
 	</File>
 	<File name="main.cpp" open="1" top="1" tabpos="1">
-		<Cursor position="404" topLine="0" />
-		<BrowseMarks positions="1693,3048,3243" />
+		<Cursor position="1533" topLine="67" />
+		<BrowseMarks positions="1693,3157,3352" />
 		<Book_Marks positions="" />
 	</File>
 	<File name="picture.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="596" topLine="4" />
+		<Cursor position="596" topLine="0" />
+		<BrowseMarks positions="" />
+		<Book_Marks positions="" />
 	</File>
 </BrowseTracker_layout_file>

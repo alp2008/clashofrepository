@@ -67,7 +67,7 @@ int main()
 {
     txCreateWindow (1200, 700);
     //инициализация кнопок
-    int count_btn=4;
+    int count_btn=5;
     int count_pic=0;
     char str[100];
 
@@ -76,13 +76,15 @@ int main()
     btn[1] = {250, "defense", "defense"};
     btn[2] = {450, "resurces", "resurces"};
     btn[3] = {650, "other", "other"};
+    btn[4] = {850, "trap", "trap"};
 
     Picture menuPic[100];
 
-    count_pic = readFromDir("pictures/build", menuPic, count_pic);
-    count_pic = readFromDir("pictures/defense", menuPic, count_pic);
-    count_pic = readFromDir("pictures/resurces", menuPic, count_pic);
-    count_pic = readFromDir("pictures/other", menuPic, count_pic);
+    count_pic = readFromDir("pictures/build/", menuPic, count_pic);
+    count_pic = readFromDir("pictures/defense/", menuPic, count_pic);
+    count_pic = readFromDir("pictures/resurces/", menuPic, count_pic);
+    count_pic = readFromDir("pictures/other/", menuPic, count_pic);
+    count_pic = readFromDir("pictures/trap/", menuPic, count_pic);
 
     for(int i=0; i<count_pic; i++)
     {
@@ -91,8 +93,8 @@ int main()
         menuPic[i].w = get_w(menuPic[i].adress);
         menuPic[i].h = get_h(menuPic[i].adress);
 
-        menuPic[i].w_scr = menuPic[i].w/3;
-        menuPic[i].h_scr = menuPic[i].h/3;
+        menuPic[i].w_scr = menuPic[i].w/2;
+        menuPic[i].h_scr = menuPic[i].h/2;
 
         menuPic[i].visible = false;
 
