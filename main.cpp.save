@@ -45,7 +45,7 @@ int readFromDir(string adress, Picture menuPic[], int count_pic)
             }
             else if (Y>550)
             {
-                X = 120;
+                X = 150;
                 Y = 100;
             }
             menuPic[count_pic].x = X;
@@ -65,9 +65,9 @@ int readFromDir(string adress, Picture menuPic[], int count_pic)
 
 int main()
 {
-    txCreateWindow (1200, 700);
+    txCreateWindow (1300, 700);
     //инициализация кнопок
-    int count_btn=5;
+    int count_btn=6;
     int count_pic=0;
     char str[100];
 
@@ -77,6 +77,7 @@ int main()
     btn[2] = {450, "resurces", "resurces"};
     btn[3] = {650, "other", "other"};
     btn[4] = {850, "trap", "trap"};
+    btn[5] = {1050, "heroes", "heroes"};
 
     Picture menuPic[100];
 
@@ -85,6 +86,7 @@ int main()
     count_pic = readFromDir("pictures/resurces/", menuPic, count_pic);
     count_pic = readFromDir("pictures/other/", menuPic, count_pic);
     count_pic = readFromDir("pictures/trap/", menuPic, count_pic);
+    count_pic = readFromDir("pictures/heroes/", menuPic, count_pic);
 
     for(int i=0; i<count_pic; i++)
     {
@@ -93,8 +95,8 @@ int main()
         menuPic[i].w = get_w(menuPic[i].adress);
         menuPic[i].h = get_h(menuPic[i].adress);
 
-        menuPic[i].w_scr = menuPic[i].w/2;
-        menuPic[i].h_scr = menuPic[i].h/2;
+        menuPic[i].w_scr = menuPic[i].w/1.5;
+        menuPic[i].h_scr = menuPic[i].h/1.5;
 
         menuPic[i].visible = false;
 
@@ -114,8 +116,9 @@ int main()
     while(!GetAsyncKeyState (VK_ESCAPE))
     {
         txBegin();
-        txSetColor(TX_GREEN);
-        txSetFillColor(TX_GREEN);
+        HDC Fon = txLoadImage ("pictures/fon.bmp");
+        txBitBlt(txDC(), 0, 0, 1000, 625, );
+        //txSetFillColor(TX_GREEN);
         txClear();
 
         for(int i=0; i<count_btn; i++)
@@ -208,7 +211,7 @@ int main()
             }
 
             if (GetAsyncKeyState (VK_UP))
-            {
+                {
                 centrPic[vybor].y -= 5;
             }
 
@@ -246,7 +249,7 @@ int main()
             }
         }
 
-        txSleep(50);
+        txSleep(10);
         txEnd();
         }
 

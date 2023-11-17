@@ -2598,3 +2598,179 @@ Run file:	D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe
 Directory:	D:\проекты и другое\clashofrepository-main
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe, файл: d:\program\codeblocks\mingw\include\txlib.h, строка: 13628, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005072FC (32-bit), Flags: CMdRe0, Thread: 0x44A0 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x004221C3 in D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe: txBitBlt() at d:/program/codeblocks/mingw/include/txlib.h (13628)
+
+# 1 0x0042C75B in D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe: main() at D:/проекты и другое/cosmic-main/main.cpp (163):
+
+    161:         if(PAGE == "Menu")
+    162:         {
+=>  163:             txBitBlt(txDC(), 0, 0, 1000, 625, menu);
+    164:             btn_start.draw();
+    165: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at d:\program\codeblocks\mingw\include\txlib.h (13628):
+
+  13626:     {
+  13627: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13628: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13629: 
+  13630: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at D:\проекты и другое\cosmic-main\main.cpp (163):
+
+    161:         if(PAGE == "Menu")
+    162:         {
+=>  163:             txBitBlt(txDC(), 0, 0, 1000, 625, menu);
+    164:             btn_start.draw();
+    165: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Nov 17 2023 19:33:54, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 17 2023 19:33:59
+
+Run file:	D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofrepository-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe, файл: d:\program\codeblocks\mingw\include\txlib.h, строка: 13678, функция: bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF),
+
+Сообщение: Прямоугольник копируемой области {0, 0, 1300, 1047} не полностью лежит внутри изображения-источника {0, 0, 1250, 940}, функция txTransparentBlt() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005082FC (32-bit), Flags: CMdRe0, Thread: 0x3E7C (Main), GetLastError(): 13 (Недопустимые данные). 
+From: d:\program\codeblocks\mingw\include\txlib.h (13677) bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x004228EC in D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe: txTransparentBlt() at d:/program/codeblocks/mingw/include/txlib.h (13678)
+
+# 1 0x0042CC5E in D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe: main() at D:/проекты и другое/clashofrepository-main/main.cpp (124):
+
+    122:         txClear();
+    123:         Fon = txLoadImage ("pictures/Fon.bmp");
+=>  124:         txTransparentBlt (txDC(), 0, 0, 1300, 1047, Fon);
+    125: 
+    126:         for(int i=0; i<count_btn; i++)
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF) at d:\program\codeblocks\mingw\include\txlib.h (13677):
+
+  13675:         {
+  13676: $       SetLastError (ERROR_INVALID_DATA);
+=>13677: $       TX_ERROR ("Прямоугольник копируемой области {%g, %g, %g, %g} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13678:                   "функция txTransparentBlt() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13679:         }
+
+# 1 in int main() at D:\проекты и другое\clashofrepository-main\main.cpp (124):
+
+    122:         txClear();
+    123:         Fon = txLoadImage ("pictures/Fon.bmp");
+=>  124:         txTransparentBlt (txDC(), 0, 0, 1300, 1047, Fon);
+    125: 
+    126:         for(int i=0; i<count_btn; i++)
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Nov 17 2023 19:40:42, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 17 2023 19:40:46
+
+Run file:	D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofrepository-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe, файл: d:\program\codeblocks\mingw\include\txlib.h, строка: 13678, функция: bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF),
+
+Сообщение: Прямоугольник копируемой области {0, 0, 1300, 1047} не полностью лежит внутри изображения-источника {0, 0, 1250, 940}, функция txTransparentBlt() работать не будет.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005082FC (32-bit), Flags: CMdRe0, Thread: 0x2294 (Main), GetLastError(): 13 (Недопустимые данные). 
+From: d:\program\codeblocks\mingw\include\txlib.h (13677) bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF).
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x004228EC in D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe: txTransparentBlt() at d:/program/codeblocks/mingw/include/txlib.h (13678)
+
+# 1 0x0042CC5E in D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe: main() at D:/проекты и другое/clashofrepository-main/main.cpp (124):
+
+    122:         txClear();
+    123:         Fon = txLoadImage ("pictures/Fon.bmp");
+=>  124:         txTransparentBlt (txDC(), 0, 0, 1300, 1047, Fon);
+    125: 
+    126:         for(int i=0; i<count_btn; i++)
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF) at d:\program\codeblocks\mingw\include\txlib.h (13677):
+
+  13675:         {
+  13676: $       SetLastError (ERROR_INVALID_DATA);
+=>13677: $       TX_ERROR ("Прямоугольник копируемой области {%g, %g, %g, %g} не полностью лежит внутри изображения-источника {%d, %d, %d, %d}, "
+  13678:                   "функция txTransparentBlt() работать не будет.", xSource, ySource, xSource + width, ySource + height, 0, 0, (int) size.x, (int) size.y);
+  13679:         }
+
+# 1 in int main() at D:\проекты и другое\clashofrepository-main\main.cpp (124):
+
+    122:         txClear();
+    123:         Fon = txLoadImage ("pictures/Fon.bmp");
+=>  124:         txTransparentBlt (txDC(), 0, 0, 1300, 1047, Fon);
+    125: 
+    126:         for(int i=0; i<count_btn; i++)
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Nov 17 2023 19:40:42, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 17 2023 19:41:04
+
+Run file:	D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofrepository-main
+
+--------------------------------------------------

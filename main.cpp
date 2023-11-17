@@ -39,13 +39,13 @@ int readFromDir(string adress, Picture menuPic[], int count_pic)
       {
         if((string)ent->d_name != "." && (string)ent->d_name != "..")
         {
-            if(Y<=550 && X == 20)
+            if(Y<=800 && X == 20)
             {
                 X = 20;
             }
-            else if (Y>550)
+            else if (Y>800)
             {
-                X = 120;
+                X = 150;
                 Y = 100;
             }
             menuPic[count_pic].x = X;
@@ -65,11 +65,13 @@ int readFromDir(string adress, Picture menuPic[], int count_pic)
 
 int main()
 {
-    txCreateWindow (1200, 700);
+    txCreateWindow (1250, 940);
     //инициализация кнопок
-    int count_btn=5;
+    int count_btn=6;
     int count_pic=0;
     char str[100];
+
+    HDC Fon = txLoadImage("Pictures/Fon.bmp");
 
     Button btn[count_btn];
     btn[0] = {50, "build", "build"};
@@ -77,6 +79,7 @@ int main()
     btn[2] = {450, "resurces", "resurces"};
     btn[3] = {650, "other", "other"};
     btn[4] = {850, "trap", "trap"};
+    btn[5] = {1050, "heroes", "heroes"};
 
     Picture menuPic[100];
 
@@ -85,6 +88,7 @@ int main()
     count_pic = readFromDir("pictures/resurces/", menuPic, count_pic);
     count_pic = readFromDir("pictures/other/", menuPic, count_pic);
     count_pic = readFromDir("pictures/trap/", menuPic, count_pic);
+    count_pic = readFromDir("pictures/heroes/", menuPic, count_pic);
 
     for(int i=0; i<count_pic; i++)
     {
@@ -93,8 +97,8 @@ int main()
         menuPic[i].w = get_w(menuPic[i].adress);
         menuPic[i].h = get_h(menuPic[i].adress);
 
-        menuPic[i].w_scr = menuPic[i].w/2;
-        menuPic[i].h_scr = menuPic[i].h/2;
+        menuPic[i].w_scr = menuPic[i].w/1.5;
+        menuPic[i].h_scr = menuPic[i].h/1.5;
 
         menuPic[i].visible = false;
 
@@ -114,9 +118,10 @@ int main()
     while(!GetAsyncKeyState (VK_ESCAPE))
     {
         txBegin();
-        txSetColor(TX_GREEN);
-        txSetFillColor(TX_GREEN);
+        //txSetFillColor(TX_GREEN);
         txClear();
+        Fon = txLoadImage ("pictures/Fon.bmp");
+        txTransparentBlt (txDC(), 0, 0, 1250, 940, Fon);
 
         for(int i=0; i<count_btn; i++)
         {
@@ -190,9 +195,9 @@ int main()
         }
 
 
-        char str[10];
+        /*char str[10];
         sprintf(str, "индекс чёто там  = %d", vybor);
-        txTextOut(50, 650, str);
+        txTextOut(50, 650, str);*/
 
 
         if(vybor>=0)
@@ -208,7 +213,7 @@ int main()
             }
 
             if (GetAsyncKeyState (VK_UP))
-            {
+                {
                 centrPic[vybor].y -= 5;
             }
 
@@ -246,7 +251,7 @@ int main()
             }
         }
 
-        txSleep(50);
+        txSleep(10);
         txEnd();
         }
 
