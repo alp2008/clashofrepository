@@ -71,7 +71,7 @@ int main()
     int count_pic=0;
     char str[100];
 
-    HDC Fon = txLoadImage("Pictures/Fon.bmp");
+    HDC Fon1 = txLoadImage("Pictures/Fon.bmp");
 
     Button btn[count_btn];
     btn[0] = {50, "build", "build"};
@@ -110,6 +110,8 @@ int main()
 
     Picture centrPic[100];
 
+    Fon1 = txLoadImage ("pictures/Fon.bmp");
+
     int vybor = -1;
     bool mouse_click = false;
     int nCentrPic = 0;
@@ -118,10 +120,8 @@ int main()
     while(!GetAsyncKeyState (VK_ESCAPE))
     {
         txBegin();
-        //txSetFillColor(TX_GREEN);
         txClear();
-        Fon = txLoadImage ("pictures/Fon.bmp");
-        txTransparentBlt (txDC(), 0, 0, 1250, 940, Fon);
+        txTransparentBlt (txDC(), 0, 0, 1250, 940, Fon1);
 
         for(int i=0; i<count_btn; i++)
         {
@@ -264,6 +264,8 @@ int main()
     {
         txDeleteDC (centrPic[i].pic);
     }
+
+    txDeleteDC(Fon1);
 
 
 return 0;

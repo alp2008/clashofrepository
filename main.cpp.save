@@ -39,11 +39,11 @@ int readFromDir(string adress, Picture menuPic[], int count_pic)
       {
         if((string)ent->d_name != "." && (string)ent->d_name != "..")
         {
-            if(Y<=550 && X == 20)
+            if(Y<=800 && X == 20)
             {
                 X = 20;
             }
-            else if (Y>550)
+            else if (Y>800)
             {
                 X = 150;
                 Y = 100;
@@ -65,11 +65,13 @@ int readFromDir(string adress, Picture menuPic[], int count_pic)
 
 int main()
 {
-    txCreateWindow (1300, 700);
+    txCreateWindow (1250, 940);
     //инициализация кнопок
     int count_btn=6;
     int count_pic=0;
     char str[100];
+
+    HDC Fon = txLoadImage("Pictures/Fon.bmp");
 
     Button btn[count_btn];
     btn[0] = {50, "build", "build"};
@@ -116,10 +118,10 @@ int main()
     while(!GetAsyncKeyState (VK_ESCAPE))
     {
         txBegin();
-        HDC Fon = txLoadImage ("pictures/fon.bmp");
-        txBitBlt(txDC(), 0, 0, 1000, 625, );
         //txSetFillColor(TX_GREEN);
         txClear();
+        Fon = txLoadImage ("pictures/Fon.bmp");
+        txTransparentBlt (txDC(), 0, 0, 1250, 940, Fon);
 
         for(int i=0; i<count_btn; i++)
         {
@@ -193,9 +195,9 @@ int main()
         }
 
 
-        char str[10];
+        /*char str[10];
         sprintf(str, "индекс чёто там  = %d", vybor);
-        txTextOut(50, 650, str);
+        txTextOut(50, 650, str);*/
 
 
         if(vybor>=0)
@@ -262,6 +264,8 @@ int main()
     {
         txDeleteDC (centrPic[i].pic);
     }
+    
+    txDeleteDC(Fon);
 
 
 return 0;
