@@ -1,0 +1,6 @@
+529
+272
+pictures/build/th.bmp
+561
+200
+pictures/defense/negr.bmp

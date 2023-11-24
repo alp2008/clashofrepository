@@ -61,25 +61,31 @@ int readFromDir(string adress, Picture menuPic[], int count_pic)
     return count_pic;
 }
 
+const int count_btn = 8;
+const int btn_save = count_btn-1;
+
 
 
 int main()
 {
-    txCreateWindow (1250, 940);
+    txCreateWindow (1250, 800);
+    txDisableAutoPause();
     //инициализация кнопок
-    int count_btn=6;
+    //int count_btn=8;
     int count_pic=0;
     char str[100];
 
     HDC Fon1 = txLoadImage("Pictures/Fon.bmp");
 
     Button btn[count_btn];
-    btn[0] = {50, "build", "build"};
-    btn[1] = {250, "defense", "defense"};
-    btn[2] = {450, "resurces", "resurces"};
-    btn[3] = {650, "other", "other"};
-    btn[4] = {850, "trap", "trap"};
-    btn[5] = {1050, "heroes", "heroes"};
+    btn[0] = {50, 30, "build", "build"};
+    btn[1] = {250, 30, "defense", "defense"};
+    btn[2] = {450, 30, "resurces", "resurces"};
+    btn[3] = {650, 30, "other", "other"};
+    btn[4] = {850, 30, "trap", "trap"};
+    btn[5] = {1050, 30, "heroes", "heroes"};
+    btn[6] = {1050, 650, "loud"};
+    btn[7] = {1050, 700, "save"};
 
     Picture menuPic[100];
 
@@ -251,8 +257,28 @@ int main()
             }
         }
 
-        txSleep(10);
+        //сохранение
+        if(btn[btn_save].Click())
+        {
+            ofstream fileout;
+            fileout.open("result.txt");
+            if (fileout.is_open())
+            {
+                for(int i=0; i<nCentrPic; i++)
+                {
+                    if(centrPic[i].visible)
+                    {
+                    fileout << centrPic[i].x << endl;
+                    fileout << centrPic[i].y << endl;
+                    fileout << centrPic[i].adress << endl;
+                    }
+                }
+            }
+            fileout.close();
+        }
+
         txEnd();
+        txSleep(10);
         }
 
     for(int i=0; i<count_pic; i++)
