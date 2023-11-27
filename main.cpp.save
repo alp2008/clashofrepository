@@ -61,20 +61,19 @@ int readFromDir(string adress, Picture menuPic[], int count_pic)
     return count_pic;
 }
 
+HDC Fon1 = txLoadImage("Pictures/Fon.bmp");
 const int count_btn = 8;
 const int btn_save = count_btn-1;
-
-
+const int btn_load = count_btn-2;
 
 int main()
 {
     txCreateWindow (1250, 800);
+    txDisableAutoPause();
     //инициализация кнопок
     //int count_btn=8;
     int count_pic=0;
     char str[100];
-
-    HDC Fon1 = txLoadImage("Pictures/Fon.bmp");
 
     Button btn[count_btn];
     btn[0] = {50, 30, "build", "build"};
@@ -83,7 +82,7 @@ int main()
     btn[3] = {650, 30, "other", "other"};
     btn[4] = {850, 30, "trap", "trap"};
     btn[5] = {1050, 30, "heroes", "heroes"};
-    btn[6] = {1050, 650, "loud"};
+    btn[6] = {1050, 650, "load"};
     btn[7] = {1050, 700, "save"};
 
     Picture menuPic[100];
@@ -263,13 +262,48 @@ int main()
             fileout.open("result.txt");
             if (fileout.is_open())
             {
-                for(int i=0; i<nCentralPic; i++)
+                for(int i=0; i<nCentrPic; i++)
                 {
                     if(centrPic[i].visible)
                     {
                     fileout << centrPic[i].x << endl;
                     fileout << centrPic[i].y << endl;
                     fileout << centrPic[i].adress << endl;
+                    }
+                }
+            }
+            fileout.close();
+        }
+        
+         if(btn[btn_load].Click())
+        {
+            char buff[50];
+            ifstream filein("result.txt");
+            if (filein.good())
+            {
+                filein.getline(buff, 50);
+                int x = atoi(buff);
+                filein.getline(buff, 50);
+                int y = atoi(buff);
+                filein.getline(buff, 50);
+                for(int i=0; i<nCentrPic; i++)
+                {
+                    if(menuPic[i].adress == adress)
+                    {
+                        centrPic[nCentrPic]  = {500,
+                                                100,
+                                                menuPic[npic].adress,
+                                                menuPic[npic].pic,
+                                                w_scr,
+                                                h_scr,
+                                                menuPic[npic].w,
+                                                menuPic[npic].h,
+                                                menuPic[npic].visible,
+                                                menuPic[npic].category};
+
+                        nCentrPic ++;
+                    }
+                }
             }
             fileout.close();
         }

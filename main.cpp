@@ -61,10 +61,10 @@ int readFromDir(string adress, Picture menuPic[], int count_pic)
     return count_pic;
 }
 
+HDC Fon1 = txLoadImage("Pictures/Fon.bmp");
 const int count_btn = 8;
 const int btn_save = count_btn-1;
-
-
+const int btn_load = count_btn-2;
 
 int main()
 {
@@ -75,8 +75,6 @@ int main()
     int count_pic=0;
     char str[100];
 
-    HDC Fon1 = txLoadImage("Pictures/Fon.bmp");
-
     Button btn[count_btn];
     btn[0] = {50, 30, "build", "build"};
     btn[1] = {250, 30, "defense", "defense"};
@@ -84,7 +82,7 @@ int main()
     btn[3] = {650, 30, "other", "other"};
     btn[4] = {850, 30, "trap", "trap"};
     btn[5] = {1050, 30, "heroes", "heroes"};
-    btn[6] = {1050, 650, "loud"};
+    btn[6] = {1050, 650, "load"};
     btn[7] = {1050, 700, "save"};
 
     Picture menuPic[100];
@@ -275,6 +273,45 @@ int main()
                 }
             }
             fileout.close();
+        }
+
+        if(btn[btn_load].Click())
+        {
+            char buff[50];
+            ifstream filein("result.txt");
+            while (filein.good())
+            {
+                filein.getline(buff, 50);
+                int x = atoi(buff);
+                filein.getline(buff, 50);
+                int y = atoi(buff);
+                filein.getline(buff, 50);
+                string adress = buff;
+                filein.getline(buff, 50);
+                int w_scr = atoi(buff);
+                filein.getline(buff, 50);
+                int h_scr = atoi(buff);
+
+                for(int i=0; i<nCentrPic; i++)
+                {
+                    if(menuPic[i].adress == adress)
+                    {
+                        centrPic[nCentrPic]  = {x,
+                                                y,
+                                                menuPic[i].adress,
+                                                menuPic[i].pic,
+                                                w_scr,
+                                                h_scr,
+                                                menuPic[i].w,
+                                                menuPic[i].h,
+                                                true,
+                                                menuPic[i].category};
+
+                        nCentrPic ++;
+                    }
+                }
+            }
+            filein.close();
         }
 
         txEnd();
