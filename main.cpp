@@ -315,7 +315,7 @@ int main()
             txSetColor(TX_BLACK);
             txSetFillColor(TX_YELLOW);
 
-            for(int i=0; i<count_btn; i++)
+            for(int i=0; i<count_btn-1; i++)
             {
                 btn[i].Draw();
             }
@@ -446,7 +446,7 @@ int main()
             //сохранение
             if(btn[btn_save].Click())
             {
-                string FileName = runFileDialog(false);
+                string FileName = runFileDialog(true);
 
                 ofstream fileout;
                 fileout.open(FileName);
@@ -471,27 +471,33 @@ int main()
             {
                 string FileName = runFileDialog(false);
 
-                char buff[50];
-                ifstream filein(FileName    );
+                for (int i=0; i<nCentrPic; i++)
+                {
+                    centrPic[i].visible = false;
+                    nCentrPic = 0;
+                }
+
+                char buff[60];
+                ifstream filein(FileName);
                 while (filein.good())
                 {
-                    filein.getline(buff, 50);
+                    filein.getline(buff, 60);
                     int x = atoi(buff);
-                    filein.getline(buff, 50);
+                    filein.getline(buff, 60);
                     int y = atoi(buff);
-                    filein.getline(buff, 50);
+                    filein.getline(buff, 60);
                     string adress = buff;
-                    filein.getline(buff, 50);
+                    filein.getline(buff, 60);
                     int w_scr = atoi(buff);
-                    filein.getline(buff, 50);
+                    filein.getline(buff, 60);
                     int h_scr = atoi(buff);
 
-                    for(int i=0; i<nCentrPic; i++)
+
+                    for(int i=0; i<count_pic; i++)
                     {
                         if(menuPic[i].adress == adress)
                         {
-                            centrPic[nCentrPic]  = {x,
-                                                    y,
+                            centrPic[nCentrPic]  = {x, y,
                                                     menuPic[i].adress,
                                                     menuPic[i].pic,
                                                     w_scr,
@@ -507,6 +513,12 @@ int main()
                 }
                 filein.close();
             }
+
+
+                    /*char str[100];
+                    sprintf(str, "nCentrPic  = %d", nCentrPic);
+                    txTextOut(50, 650, str);*/
+
                 if(btn[btn_help].Click())
                 {
                    page = page_help;

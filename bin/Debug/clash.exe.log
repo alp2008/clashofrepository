@@ -4040,3 +4040,171 @@ Run file:	D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe
 Directory:	D:\проекты и другое\clashofrepository-main
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\пономарёв александр\clashofrepository-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0045427C в функции _M_is_leaked() в файле d:/codeblocks/mingw/include/c++/4.8.1/debug/functions.h на строке 45. Попытка прочесть данные по адресу 0x0000000C в модуле D:\пономарёв александр\clashofrepository-main\bin\Debug\clash.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0050A2FC (32-bit), Flags: CMdRE0, Thread: 0x3388 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045427C in D:\пономарёв александр\clashofrepository-main\bin\Debug\clash.exe: _M_is_leaked() at d:/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 1 0x0048318B in D:\пономарёв александр\clashofrepository-main\bin\Debug\clash.exe: swap() at d:/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 2 0x0048A489 in D:\пономарёв александр\clashofrepository-main\bin\Debug\clash.exe: operator=() at d:/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 3 0x0044E9ED in D:\пономарёв александр\clashofrepository-main\bin\Debug\clash.exe: operator=() at d:/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 4 0x0042E798 in D:\пономарёв александр\clashofrepository-main\bin\Debug\clash.exe: main() at D:/пономарёв александр/clashofrepository-main/main.cpp (510):
+
+    508:                                                     menuPic[i].h,
+    509:                                                     true,
+=>  510:                                                     menuPic[i].category};
+    511: 
+    512:                             nCentrPic ++;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int main() at D:\пономарёв александр\clashofrepository-main\main.cpp (496):
+
+    494:                      char str[100];
+    495:                     sprintf(str, "x  = %d", x);
+=>  496:                     txTextOut(50, 650, str);
+    497: 
+    498:                     for(int i=0; i<count_pic; i++)
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\codeblocks\mingw\include\txlib.h
+Compiled:	Dec 11 2023 20:42:46, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 11 2023 20:43:08
+
+Run file:	D:\пономарёв александр\clashofrepository-main\bin\Debug\clash.exe
+Directory:	D:\пономарёв александр\clashofrepository-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\пономарёв александр\clashofrepository-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0045427C в функции _M_is_leaked() в файле d:/codeblocks/mingw/include/c++/4.8.1/debug/functions.h на строке 45. Попытка прочесть данные по адресу 0x0000000C в модуле D:\пономарёв александр\clashofrepository-main\bin\Debug\clash.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0050A2FC (32-bit), Flags: CMdRE0, Thread: 0x3388 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045427C in D:\пономарёв александр\clashofrepository-main\bin\Debug\clash.exe: _M_is_leaked() at d:/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 1 0x0048318B in D:\пономарёв александр\clashofrepository-main\bin\Debug\clash.exe: swap() at d:/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 2 0x0048A489 in D:\пономарёв александр\clashofrepository-main\bin\Debug\clash.exe: operator=() at d:/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 3 0x0044E9ED in D:\пономарёв александр\clashofrepository-main\bin\Debug\clash.exe: operator=() at d:/codeblocks/mingw/include/c++/4.8.1/debug/functions.h (45):
+
+     43:   // An arbitrary iterator pointer is not singular.
+     44:   inline bool
+=>   45:   __check_singular_aux(const void*) { return false; }
+     46: 
+     47:   // We may have an iterator that derives from _Safe_iterator_base but isn't
+
+# 4 0x0042E798 in D:\пономарёв александр\clashofrepository-main\bin\Debug\clash.exe: main() at D:/пономарёв александр/clashofrepository-main/main.cpp (510):
+
+    508:                                                     menuPic[i].h,
+    509:                                                     true,
+=>  510:                                                     menuPic[i].category};
+    511: 
+    512:                             nCentrPic ++;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int main() at D:\пономарёв александр\clashofrepository-main\main.cpp (496):
+
+    494:                      char str[100];
+    495:                     sprintf(str, "x  = %d", x);
+=>  496:                     txTextOut(50, 650, str);
+    497: 
+    498:                     for(int i=0; i<count_pic; i++)
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\codeblocks\mingw\include\txlib.h
+Compiled:	Dec 11 2023 20:42:46, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 11 2023 20:43:08
+
+Run file:	D:\пономарёв александр\clashofrepository-main\bin\Debug\clash.exe
+Directory:	D:\пономарёв александр\clashofrepository-main
+
+--------------------------------------------------
