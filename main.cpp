@@ -61,10 +61,165 @@ int readFromDir(string adress, Picture menuPic[], int count_pic)
     return count_pic;
 }
 
+string runFileDialog(bool isSave)
+{
+    string FileName = "";
+
+    OPENFILENAME ofn;
+    TCHAR szFile[260] = {0};
+
+    // Initialize OPENFILENAME
+    ZeroMemory(&ofn, sizeof(ofn));
+    ofn.lStructSize = sizeof(ofn);
+    ofn.hwndOwner = txWindow();
+    ofn.lpstrFile = szFile;
+    ofn.nMaxFile = sizeof(szFile);
+    ofn.lpstrFilter = ("Text\0*.TXT\0");
+    ofn.nFilterIndex = 1;
+    ofn.lpstrFileTitle = NULL;
+    ofn.nMaxFileTitle = 0;
+    ofn.lpstrInitialDir = NULL;
+    ofn.Flags = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST;
+
+    // Display the Open dialog box.
+    if(isSave)
+    {
+        if (GetSaveFileName(&ofn)==TRUE)
+        {
+           FileName = ofn.lpstrFile;
+           FileName = FileName + ".txt";
+
+        }
+    }
+    else
+    {
+        if (GetOpenFileName(&ofn)==TRUE)
+        {
+           FileName = ofn.lpstrFile;
+        }
+    }
+    return FileName;
+}
+
+inline int GetFilePointer(HANDLE FileHandle)
+{
+    return SetFilePointer(FileHandle, 0, 0, FILE_CURRENT);
+}
+
+bool SaveBMPFile(char *filename, HBITMAP bitmap, HDC bitmapDC, int width, int height)
+{
+    bool Success=0;
+    HBITMAP OffscrBmp=NULL;
+    HDC OffscrDC=NULL;
+    LPBITMAPINFO lpbi=NULL;
+    LPVOID lpvBits=NULL;
+    HANDLE BmpFile=INVALID_HANDLE_VALUE;
+    BITMAPFILEHEADER bmfh;
+    if ((OffscrBmp = CreateCompatibleBitmap(bitmapDC, width, height)) == NULL)
+        return 0;
+    if ((OffscrDC = CreateCompatibleDC(bitmapDC)) == NULL)
+        return 0;
+    HBITMAP OldBmp = (HBITMAP)SelectObject(OffscrDC, OffscrBmp);
+    BitBlt(OffscrDC, 0, 0, width, height, bitmapDC, 0, 0, SRCCOPY);
+    if ((lpbi = (LPBITMAPINFO)(new char[sizeof(BITMAPINFOHEADER) + 256 * sizeof(RGBQUAD)])) == NULL)
+        return 0;
+    ZeroMemory(&lpbi->bmiHeader, sizeof(BITMAPINFOHEADER));
+    lpbi->bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
+    SelectObject(OffscrDC, OldBmp);
+    if (!GetDIBits(OffscrDC, OffscrBmp, 0, height, NULL, lpbi, DIB_RGB_COLORS))
+        return 0;
+    if ((lpvBits = new char[lpbi->bmiHeader.biSizeImage]) == NULL)
+        return 0;
+    if (!GetDIBits(OffscrDC, OffscrBmp, 0, height, lpvBits, lpbi, DIB_RGB_COLORS))
+        return 0;
+    if ((BmpFile = CreateFile(filename,
+                        GENERIC_WRITE,
+                        0, NULL,
+                        CREATE_ALWAYS,
+                        FILE_ATTRIBUTE_NORMAL,
+                        NULL)) == INVALID_HANDLE_VALUE)
+        return 0;
+    DWORD Written;
+    bmfh.bfType = 19778;
+    bmfh.bfReserved1 = bmfh.bfReserved2 = 0;
+    if (!WriteFile(BmpFile, &bmfh, sizeof(bmfh), &Written, NULL))
+        return 0;
+    if (Written < sizeof(bmfh))
+        return 0;
+    if (!WriteFile(BmpFile, &lpbi->bmiHeader, sizeof(BITMAPINFOHEADER), &Written, NULL))
+        return 0;
+    if (Written < sizeof(BITMAPINFOHEADER))
+        return 0;
+    int PalEntries;
+    if (lpbi->bmiHeader.biCompression == BI_BITFIELDS)
+        PalEntries = 3;
+    else PalEntries = (lpbi->bmiHeader.biBitCount <= 8) ?
+                      (int)(1 << lpbi->bmiHeader.biBitCount) : 0;
+    if(lpbi->bmiHeader.biClrUsed)
+    PalEntries = lpbi->bmiHeader.biClrUsed;
+    if(PalEntries){
+    if (!WriteFile(BmpFile, &lpbi->bmiColors, PalEntries * sizeof(RGBQUAD), &Written, NULL))
+        return 0;
+        if (Written < PalEntries * sizeof(RGBQUAD))
+            return 0;
+    }
+    bmfh.bfOffBits = GetFilePointer(BmpFile);
+    if (!WriteFile(BmpFile, lpvBits, lpbi->bmiHeader.biSizeImage, &Written, NULL))
+        return 0;
+    if (Written < lpbi->bmiHeader.biSizeImage)
+        return 0;
+    bmfh.bfSize = GetFilePointer(BmpFile);
+    SetFilePointer(BmpFile, 0, 0, FILE_BEGIN);
+    if (!WriteFile(BmpFile, &bmfh, sizeof(bmfh), &Written, NULL))
+        return 0;
+    if (Written < sizeof(bmfh))
+        return 0;
+
+    CloseHandle (BmpFile);
+
+    delete [] (char*)lpvBits;
+    delete [] lpbi;
+
+    DeleteDC (OffscrDC);
+    DeleteObject (OffscrBmp);
+
+
+    return 1;
+}
+
+bool ScreenCapture(int x, int y, int width, int height, char *filename, HWND hwnd)
+{
+    HDC hDC = GetDC(hwnd);
+    HDC hDc = CreateCompatibleDC(hDC);
+
+    HBITMAP hBmp = CreateCompatibleBitmap(hDC, width, height);
+
+    HGDIOBJ old= SelectObject(hDc, hBmp);
+    BitBlt(hDc, 0, 0, width, height, hDC, x, y, SRCCOPY);
+
+    bool ret = SaveBMPFile(filename, hBmp, hDc, width, height);
+
+    SelectObject(hDc, old);
+
+    DeleteObject(hBmp);
+
+    DeleteDC (hDc);
+    ReleaseDC (hwnd, hDC);
+
+    return ret;
+}
+
 HDC Fon1 = txLoadImage("Pictures/Fon.bmp");
-const int count_btn = 8;
-const int btn_save = count_btn-1;
-const int btn_load = count_btn-2;
+const int count_btn = 12;
+const int btn_prtsc = count_btn-6;
+const int btn_save = count_btn-5;
+const int btn_load = count_btn-4;
+const int btn_help = count_btn-3;
+const int btn_exit = count_btn-2;
+const int btn_menu = count_btn-1;
+const int page_menu = 0;
+const int page_redactor = 1;
+const int page_help = 2;
 
 int main()
 {
@@ -75,6 +230,8 @@ int main()
     int count_pic=0;
     char str[100];
 
+    int page = page_menu;
+
     Button btn[count_btn];
     btn[0] = {50, 30, "build", "build"};
     btn[1] = {250, 30, "defense", "defense"};
@@ -82,8 +239,12 @@ int main()
     btn[3] = {650, 30, "other", "other"};
     btn[4] = {850, 30, "trap", "trap"};
     btn[5] = {1050, 30, "heroes", "heroes"};
-    btn[6] = {1050, 650, "load"};
-    btn[7] = {1050, 700, "save"};
+    btn[6] = {1000,450, "Снимок экрана", ""};
+    btn[7] = {1000,500, "Сохранить", ""};
+    btn[8] = {1000,550, "Загрузить", ""};
+    btn[9] = {1000,600, "Справка", ""};
+    btn[10] = {1000,650, "Выход", ""};
+    btn[11] = {530,350, "Начать", ""};
 
     Picture menuPic[100];
 
@@ -121,197 +282,264 @@ int main()
     int nCentrPic = 0;
     int npic = 0;
 
-    while(!GetAsyncKeyState (VK_ESCAPE))
+    while(!btn[btn_exit].Click())
     {
         txBegin();
         txClear();
         txTransparentBlt (txDC(), 0, 0, 1250, 940, Fon1);
 
-        for(int i=0; i<count_btn; i++)
+         if(page == page_menu)
         {
-            btn[i].Draw();
-        }
-
-        for(int i=0; i<count_pic; i++)
-        {
-            menuPic[i].Draw();
-        }
-
-        for(int i=0; i<nCentrPic; i++)
-        {
-            centrPic[i].Draw();
-        }
-
-       for(int ib=0; ib<count_btn; ib++)
-        {
-            if(btn[ib].Click())
+            btn[btn_menu].Draw();
+            btn[btn_help].Draw();
+            if(btn[btn_menu].Click())
             {
-                for(int ip=0; ip<count_pic; ip++)
+               page = page_redactor;
+               txSleep(100);
+            }
+            if(btn[btn_help].Click())
+            {
+               page = page_help;
+               btn[btn_help].name = "Начать";
+               txSleep(100);
+            }
+        }
+
+
+        if(page == page_redactor)
+        {
+            txSetColor(TX_BLACK, 5);
+            txSetFillColor(TX_NULL);
+            txRectangle(250, 100, 950, 700);
+
+            txSetColor(TX_BLACK);
+            txSetFillColor(TX_YELLOW);
+
+            for(int i=0; i<count_btn; i++)
+            {
+                btn[i].Draw();
+            }
+
+            for(int i=0; i<count_pic; i++)
+            {
+                menuPic[i].Draw();
+            }
+
+            for(int i=0; i<nCentrPic; i++)
+            {
+                centrPic[i].Draw();
+            }
+
+           for(int ib=0; ib<count_btn; ib++)
+            {
+                if(btn[ib].Click())
                 {
-                    menuPic[ip].visible = false;
-                    if(menuPic[ip].category == btn[ib].category)
+                    for(int ip=0; ip<count_pic; ip++)
                     {
-                        menuPic[ip].visible = true;
+                        menuPic[ip].visible = false;
+                        if(menuPic[ip].category == btn[ib].category)
+                        {
+                            menuPic[ip].visible = true;
+                        }
                     }
                 }
             }
-        }
 
-        for(int npic=0; npic<count_pic; npic++)
-        {
-            if(menuPic[npic].Click() && menuPic[npic].visible)
+            for(int npic=0; npic<count_pic; npic++)
             {
-                while(txMouseButtons() == 1)
+                if(menuPic[npic].Click() && menuPic[npic].visible)
                 {
-                    txSleep(10);
-                }
-                centrPic[nCentrPic]  = {500,
-                                        100,
-                                        menuPic[npic].adress,
-                                        menuPic[npic].pic,
-                                        menuPic[npic].w,
-                                        menuPic[npic].h,
-                                        menuPic[npic].w,
-                                        menuPic[npic].h,
-                                        menuPic[npic].visible,
-                                        menuPic[npic].category};
-
-                nCentrPic ++;
-            }
-        }
-
-
-        for(int i=0; i<nCentrPic; i++)
-        {
-            if(centrPic[i].Click() && centrPic[i].visible)
-            {
-                vybor = i;
-                mouse_click = false;
-            }
-        }
-
-        if(vybor>=0 && GetAsyncKeyState (VK_DELETE))
-        {
-            centrPic[vybor] = centrPic[nCentrPic-1];
-            nCentrPic--;
-            vybor = -1;
-            mouse_click = true;
-        }
-
-
-        /*char str[10];
-        sprintf(str, "индекс чёто там  = %d", vybor);
-        txTextOut(50, 650, str);*/
-
-
-        if(vybor>=0)
-        {
-            if (GetAsyncKeyState (VK_LEFT))
-            {
-                centrPic[vybor].x -= 5;
-            }
-
-            if (GetAsyncKeyState (VK_RIGHT))
-            {
-                centrPic[vybor].x += 5;
-            }
-
-            if (GetAsyncKeyState (VK_UP))
-                {
-                centrPic[vybor].y -= 5;
-            }
-
-            if (GetAsyncKeyState (VK_DOWN))
-            {
-                centrPic[vybor].y += 5;
-            }
-
-            if (GetAsyncKeyState (VK_OEM_PLUS) || GetAsyncKeyState(VK_ADD))
-            {
-                centrPic[vybor].w_scr = centrPic[vybor].w_scr * 1.1;
-                centrPic[vybor].h_scr = centrPic[vybor].h_scr * 1.1;
-            }
-
-            if (GetAsyncKeyState (VK_OEM_MINUS) || GetAsyncKeyState(VK_SUBTRACT))
-            {
-                centrPic[vybor].w_scr = centrPic[vybor].w_scr * 0.9;
-                centrPic[vybor].h_scr = centrPic[vybor].h_scr * 0.9;
-            }
-        }
-
-        if(vybor>=0)
-        {
-            if(txMouseButtons() == 1 && !mouse_click)
-            {
-                centrPic[vybor].x = txMouseX() - centrPic[vybor].w_scr/2;
-                centrPic[vybor].y = txMouseY() - centrPic[vybor].h_scr/2;
-            }
-            else
-            {
-                if(txMouseButtons() !=1)
-                {
-                    mouse_click = true;
-                }
-            }
-        }
-
-        //сохранение
-        if(btn[btn_save].Click())
-        {
-            ofstream fileout;
-            fileout.open("result.txt");
-            if (fileout.is_open())
-            {
-                for(int i=0; i<nCentrPic; i++)
-                {
-                    if(centrPic[i].visible)
+                    while(txMouseButtons() == 1)
                     {
-                    fileout << centrPic[i].x << endl;
-                    fileout << centrPic[i].y << endl;
-                    fileout << centrPic[i].adress << endl;
+                        txSleep(10);
+                    }
+                    centrPic[nCentrPic]  = {500,
+                                            100,
+                                            menuPic[npic].adress,
+                                            menuPic[npic].pic,
+                                            menuPic[npic].w,
+                                            menuPic[npic].h,
+                                            menuPic[npic].w,
+                                            menuPic[npic].h,
+                                            menuPic[npic].visible,
+                                            menuPic[npic].category};
+
+                    nCentrPic ++;
+                }
+            }
+
+
+            for(int i=0; i<nCentrPic; i++)
+            {
+                if(centrPic[i].Click() && centrPic[i].visible)
+                {
+                    vybor = i;
+                    mouse_click = false;
+                }
+            }
+
+            if(vybor>=0 && GetAsyncKeyState (VK_DELETE))
+            {
+                centrPic[vybor] = centrPic[nCentrPic-1];
+                nCentrPic--;
+                vybor = -1;
+                mouse_click = true;
+            }
+
+
+            /*char str[10];
+            sprintf(str, "индекс чёто там  = %d", vybor);
+            txTextOut(50, 650, str);*/
+
+
+            if(vybor>=0)
+            {
+                if (GetAsyncKeyState (VK_LEFT))
+                {
+                    centrPic[vybor].x -= 5;
+                }
+
+                if (GetAsyncKeyState (VK_RIGHT))
+                {
+                    centrPic[vybor].x += 5;
+                }
+
+                if (GetAsyncKeyState (VK_UP))
+                    {
+                    centrPic[vybor].y -= 5;
+                }
+
+                if (GetAsyncKeyState (VK_DOWN))
+                {
+                    centrPic[vybor].y += 5;
+                }
+
+                if (GetAsyncKeyState (VK_OEM_PLUS) || GetAsyncKeyState(VK_ADD))
+                {
+                    centrPic[vybor].w_scr = centrPic[vybor].w_scr * 1.1;
+                    centrPic[vybor].h_scr = centrPic[vybor].h_scr * 1.1;
+                }
+
+                if (GetAsyncKeyState (VK_OEM_MINUS) || GetAsyncKeyState(VK_SUBTRACT))
+                {
+                    centrPic[vybor].w_scr = centrPic[vybor].w_scr * 0.9;
+                    centrPic[vybor].h_scr = centrPic[vybor].h_scr * 0.9;
+                }
+            }
+
+            if(vybor>=0)
+            {
+                if(txMouseButtons() == 1 && !mouse_click)
+                {
+                    centrPic[vybor].x = txMouseX() - centrPic[vybor].w_scr/2;
+                    centrPic[vybor].y = txMouseY() - centrPic[vybor].h_scr/2;
+                }
+                else
+                {
+                    if(txMouseButtons() !=1)
+                    {
+                        mouse_click = true;
                     }
                 }
             }
-            fileout.close();
-        }
 
-        if(btn[btn_load].Click())
-        {
-            char buff[50];
-            ifstream filein("result.txt");
-            while (filein.good())
+            //сохранение
+            if(btn[btn_save].Click())
             {
-                filein.getline(buff, 50);
-                int x = atoi(buff);
-                filein.getline(buff, 50);
-                int y = atoi(buff);
-                filein.getline(buff, 50);
-                string adress = buff;
-                filein.getline(buff, 50);
-                int w_scr = atoi(buff);
-                filein.getline(buff, 50);
-                int h_scr = atoi(buff);
+                string FileName = runFileDialog(false);
 
-                for(int i=0; i<nCentrPic; i++)
+                ofstream fileout;
+                fileout.open(FileName);
+                if (fileout.is_open())
                 {
-                    if(menuPic[i].adress == adress)
+                    for(int i=0; i<nCentrPic; i++)
                     {
-                        centrPic[nCentrPic]  = {x,
-                                                y,
-                                                menuPic[i].adress,
-                                                menuPic[i].pic,
-                                                w_scr,
-                                                h_scr,
-                                                menuPic[i].w,
-                                                menuPic[i].h,
-                                                true,
-                                                menuPic[i].category};
-
-                        nCentrPic ++;
+                        if(centrPic[i].visible)
+                        {
+                            fileout << centrPic[i].x << endl;
+                            fileout << centrPic[i].y << endl;
+                            fileout << centrPic[i].adress << endl;
+                            fileout << centrPic[i].w_scr << endl;
+                            fileout << centrPic[i].h_scr << endl;
+                        }
                     }
                 }
+                fileout.close();
             }
-            filein.close();
+
+            if(btn[btn_load].Click())
+            {
+                string FileName = runFileDialog(false);
+
+                char buff[50];
+                ifstream filein(FileName    );
+                while (filein.good())
+                {
+                    filein.getline(buff, 50);
+                    int x = atoi(buff);
+                    filein.getline(buff, 50);
+                    int y = atoi(buff);
+                    filein.getline(buff, 50);
+                    string adress = buff;
+                    filein.getline(buff, 50);
+                    int w_scr = atoi(buff);
+                    filein.getline(buff, 50);
+                    int h_scr = atoi(buff);
+
+                    for(int i=0; i<nCentrPic; i++)
+                    {
+                        if(menuPic[i].adress == adress)
+                        {
+                            centrPic[nCentrPic]  = {x,
+                                                    y,
+                                                    menuPic[i].adress,
+                                                    menuPic[i].pic,
+                                                    w_scr,
+                                                    h_scr,
+                                                    menuPic[i].w,
+                                                    menuPic[i].h,
+                                                    true,
+                                                    menuPic[i].category};
+
+                            nCentrPic ++;
+                        }
+                    }
+                }
+                filein.close();
+            }
+                if(btn[btn_help].Click())
+                {
+                   page = page_help;
+                   btn[btn_help].name = "Вернуться";
+                   txSleep(100);
+                }
+
+                if(btn[btn_prtsc].Click())
+                {
+                    ScreenCapture(250, 100, 700, 600, "result.bmp", txWindow());
+                    txMessageBox("Сохранено в result.bmp");
+                }
+
+        }
+
+        else if(page == page_help)
+        {
+            txSelectFont("Times New Roman", 42);
+            txDrawText(0, 200, 1200, 600,
+                        "Программа 'Гардероб'.\n\n"
+                        "Выбирай персонажа, одежду, аксесуары.\n"
+                        "Комбинируй по своему вкусу.\n"
+                        "Картинки передвигаются стрелочками и мышкой\n"
+                        "Увеличить '+', уменьшить '-'\n"
+                        "Результат можно сохранять в txt-формате и загружать\n"
+                        "Выход из программы - 'Escape'.\n");
+            btn[btn_help].Draw();
+            if(btn[btn_help].Click())
+            {
+               page = page_redactor;
+               btn[btn_help].name = "Справка";
+               txSleep(100);
+            }
         }
 
         txEnd();

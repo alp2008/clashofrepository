@@ -2774,3 +2774,1269 @@ Run file:	D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe
 Directory:	D:\проекты и другое\clashofrepository-main
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: Исключение С++, вызванное оператором throw.
+
+#1: Исключение EXCEPTION_CPP_MSC (0xE06D7363) при выполнении кода по адресу 0x76DAF932 в функции RaiseException() в модуле C:\WINDOWS\System32\KERNELBASE.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005092FC (32-bit), Flags: CMdRE0, Thread: 0x2A48, GetLastError(): 127 (Не найдена указанная процедура). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x76DAF932 in C:\WINDOWS\System32\KERNELBASE.dll: RaiseException()
+# 1 0x5703AE86 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 2 0x56FE8F16 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 3 0x56FE941E in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 4 0x56F283FD in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 5 0x56F25811 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 6 0x56FBF93A in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 7 0x56FBF012 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 8 0x56FBDAB0 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 9 0x56F29C13 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#10 0x56E9924C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#11 0x56FE8B48 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#12 0x56FE8C0C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#13 0x777C2B66 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIpv6AddressToStringA()
+#14 0x7779DD72 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlActivateActivationContextUnsafeFast()
+#15 0x777A1873 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#16 0x777A19E1 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#17 0x777A2285 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIsCriticalSectionLockedByThread()
+#18 0x7779E2A2 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#19 0x7779DEE6 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#20 0x76D8A206 in C:\WINDOWS\System32\KERNELBASE.dll: LoadLibraryExW()
+#21 0x762210D6 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#22 0x7622105F in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#23 0x76220E74 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#24 0x7621FD11 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#25 0x7623882E in C:\WINDOWS\System32\combase.dll: RoGetActivationFactory()
+#26 0x76206892 in C:\WINDOWS\System32\combase.dll: CoGetClassObject()
+#27 0x76204B85 in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#28 0x76212345 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#29 0x7620447F in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#30 0x76203C7A in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#31 0x76282CF5 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#32 0x76282BAD in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#33 0x76282B31 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#34 0x7621230D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#35 0x76212B4D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#36 0x76212314 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#37 0x7623A5A2 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#38 0x76239811 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#39 0x7623957E in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#40 0x75B9D4A0 in C:\WINDOWS\System32\SHELL32.dll: Ordinal866()
+#41 0x75C65523 in C:\WINDOWS\System32\SHELL32.dll: StateRepoNewMenuCache_EnsureCacheAsync()
+#42 0x75C16C84 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#43 0x75C17277 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#44 0x75B819C6 in C:\WINDOWS\System32\SHELL32.dll: SHCreateDefaultContextMenu()
+#45 0x75B826A6 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#46 0x75B81ED5 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#47 0x75B81DB2 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#48 0x75B81B6F in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#49 0x74B64510 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#50 0x74B64421 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#51 0x74F028AE in C:\WINDOWS\SYSTEM32\windows.storage.dll: ShellExecuteExW()
+#52 0x74C54E00 in C:\WINDOWS\SYSTEM32\windows.storage.dll: Ordinal2009()
+#53 0x74B64375 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#54 0x5DCC34DA in C:\WINDOWS\system32\explorerframe.dll: Ordinal130()
+#55 0x74A8C088 in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#56 0x74A8BCAC in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#57 0x74A8BA6E in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#58 0x776DC6E9 in C:\WINDOWS\System32\shcore.dll: Ordinal245()
+#59 0x777B9680 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlUnwind()
+#60 0x7778602A in C:\WINDOWS\SYSTEM32\ntdll.dll: TpCallbackIndependent()
+#61 0x7710FCC9 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Dec  1 2023 20:51:41, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 01 2023 20:51:50
+
+Run file:	D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofrepository-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: #2 (0x80010108) при выполнении кода по адресу 0x76DAF932 в функции RaiseException() в модуле C:\WINDOWS\System32\KERNELBASE.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005092FC (32-bit), Flags: CMdrE0, Thread: 0x1CC0. 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x76DAF932 in C:\WINDOWS\System32\KERNELBASE.dll: RaiseException()
+# 1 0x759D32BE in C:\WINDOWS\System32\RPCRT4.dll: RpcRaiseException()
+# 2 0x761E035B in C:\WINDOWS\System32\combase.dll: CoGetCurrentLogicalThreadId()
+# 3 0x759C6B23 in C:\WINDOWS\System32\RPCRT4.dll: NdrClientCall2()
+# 4 0x762AECA0 in C:\WINDOWS\System32\combase.dll: ObjectStublessClient32()
+# 5 0x762A6C3F in C:\WINDOWS\System32\combase.dll: InternalCoUnregisterDisconnectCallback()
+# 6 0x761E8CD0 in C:\WINDOWS\System32\combase.dll: CStdStubBuffer_QueryInterface()
+# 7 0x762A18FE in C:\WINDOWS\System32\combase.dll: InternalCoUnregisterDisconnectCallback()
+# 8 0x7624E79C in C:\WINDOWS\System32\combase.dll: HMENU_UserFree()
+# 9 0x7624D1DE in C:\WINDOWS\System32\combase.dll: CoMarshalInterface()
+#10 0x776D3C9B in C:\WINDOWS\System32\shcore.dll: IUnknown_Set()
+#11 0x74B70582 in C:\WINDOWS\SYSTEM32\windows.storage.dll: Global_WindowsStorage_fIconCacheIsValid()
+#12 0x776D6533 in C:\WINDOWS\System32\shcore.dll: IUnknown_SetSite()
+#13 0x5DCC4545 in C:\WINDOWS\system32\explorerframe.dll: Ordinal130()
+#14 0x5DCC386C in C:\WINDOWS\system32\explorerframe.dll: Ordinal130()
+#15 0x74A8C088 in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#16 0x74A8BCAC in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#17 0x74A8BA6E in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#18 0x776DC6E9 in C:\WINDOWS\System32\shcore.dll: Ordinal245()
+#19 0x777B9680 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlUnwind()
+#20 0x7778602A in C:\WINDOWS\SYSTEM32\ntdll.dll: TpCallbackIndependent()
+#21 0x7710FCC9 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+#22 0x777B7C6E in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlGetAppContainerNamedObjectPath()
+#23 0x777B7C3E in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlGetAppContainerNamedObjectPath()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Dec  1 2023 20:51:41, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 01 2023 20:51:49
+
+Run file:	D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofrepository-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: #2 (0x80010108) при выполнении кода по адресу 0x76DAF932 в функции RaiseException() в модуле C:\WINDOWS\System32\KERNELBASE.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+С помощью функции _set_se_translator() вы можете сами обработать эту ошибку.
+
+#3: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005092FC (32-bit), Flags: CMdrE0, Thread: 0x1CC0. 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x76DAF932 in C:\WINDOWS\System32\KERNELBASE.dll: RaiseException()
+# 1 0x759D32BE in C:\WINDOWS\System32\RPCRT4.dll: RpcRaiseException()
+# 2 0x761E035B in C:\WINDOWS\System32\combase.dll: CoGetCurrentLogicalThreadId()
+# 3 0x759C6B23 in C:\WINDOWS\System32\RPCRT4.dll: NdrClientCall2()
+# 4 0x762AECA0 in C:\WINDOWS\System32\combase.dll: ObjectStublessClient32()
+# 5 0x762A6C3F in C:\WINDOWS\System32\combase.dll: InternalCoUnregisterDisconnectCallback()
+# 6 0x761E8CD0 in C:\WINDOWS\System32\combase.dll: CStdStubBuffer_QueryInterface()
+# 7 0x762A18FE in C:\WINDOWS\System32\combase.dll: InternalCoUnregisterDisconnectCallback()
+# 8 0x7624E79C in C:\WINDOWS\System32\combase.dll: HMENU_UserFree()
+# 9 0x7624D1DE in C:\WINDOWS\System32\combase.dll: CoMarshalInterface()
+#10 0x776D3C9B in C:\WINDOWS\System32\shcore.dll: IUnknown_Set()
+#11 0x74B70582 in C:\WINDOWS\SYSTEM32\windows.storage.dll: Global_WindowsStorage_fIconCacheIsValid()
+#12 0x776D6533 in C:\WINDOWS\System32\shcore.dll: IUnknown_SetSite()
+#13 0x5DCC4545 in C:\WINDOWS\system32\explorerframe.dll: Ordinal130()
+#14 0x5DCC386C in C:\WINDOWS\system32\explorerframe.dll: Ordinal130()
+#15 0x74A8C088 in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#16 0x74A8BCAC in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#17 0x74A8BA6E in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#18 0x776DC6E9 in C:\WINDOWS\System32\shcore.dll: Ordinal245()
+#19 0x777B9680 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlUnwind()
+#20 0x7778602A in C:\WINDOWS\SYSTEM32\ntdll.dll: TpCallbackIndependent()
+#21 0x7710FCC9 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+#22 0x777B7C6E in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlGetAppContainerNamedObjectPath()
+#23 0x777B7C3E in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlGetAppContainerNamedObjectPath()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Dec  1 2023 20:51:41, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 01 2023 20:51:49
+
+Run file:	D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofrepository-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: Исключение С++, вызванное оператором throw.
+
+#1: Исключение EXCEPTION_CPP_MSC (0xE06D7363) при выполнении кода по адресу 0x7615F932 в функции RaiseException() в модуле C:\WINDOWS\System32\KERNELBASE.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005092FC (32-bit), Flags: CMdRE0, Thread: 0xB6C, GetLastError(): 127 (Не найдена указанная процедура). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7615F932 in C:\WINDOWS\System32\KERNELBASE.dll: RaiseException()
+# 1 0x5CD6AE86 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 2 0x5CD18F16 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 3 0x5CD1941E in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 4 0x5CC583FD in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 5 0x5CC55811 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 6 0x5CCEF93A in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 7 0x5CCEF012 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 8 0x5CCEDAB0 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 9 0x5CC59C13 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#10 0x5CBC924C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#11 0x5CD18B48 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#12 0x5CD18C0C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#13 0x770F2B66 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIpv6AddressToStringA()
+#14 0x770CDD72 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlActivateActivationContextUnsafeFast()
+#15 0x770D1873 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#16 0x770D19E1 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#17 0x770D2285 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIsCriticalSectionLockedByThread()
+#18 0x770CE2A2 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#19 0x770CDEE6 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#20 0x7613A206 in C:\WINDOWS\System32\KERNELBASE.dll: LoadLibraryExW()
+#21 0x769710D6 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#22 0x7697105F in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#23 0x76970E74 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#24 0x7696FD11 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#25 0x7698882E in C:\WINDOWS\System32\combase.dll: RoGetActivationFactory()
+#26 0x76956892 in C:\WINDOWS\System32\combase.dll: CoGetClassObject()
+#27 0x76954B85 in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#28 0x76962345 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#29 0x7695447F in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#30 0x76953C7A in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#31 0x769D2CF5 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#32 0x769D2BAD in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#33 0x769D2B31 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#34 0x7696230D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#35 0x76962B4D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#36 0x76962314 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#37 0x7698A5A2 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#38 0x76989811 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#39 0x7698957E in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#40 0x75AED4A0 in C:\WINDOWS\System32\SHELL32.dll: Ordinal866()
+#41 0x75BB5523 in C:\WINDOWS\System32\SHELL32.dll: StateRepoNewMenuCache_EnsureCacheAsync()
+#42 0x75B66C84 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#43 0x75B67277 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#44 0x75AD19C6 in C:\WINDOWS\System32\SHELL32.dll: SHCreateDefaultContextMenu()
+#45 0x75AD26A6 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#46 0x75AD1ED5 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#47 0x75AD1DB2 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#48 0x75AD1B6F in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#49 0x74614510 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#50 0x74614421 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#51 0x749B28AE in C:\WINDOWS\SYSTEM32\windows.storage.dll: ShellExecuteExW()
+#52 0x74704E00 in C:\WINDOWS\SYSTEM32\windows.storage.dll: Ordinal2009()
+#53 0x74614375 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#54 0x5E5A34DA in C:\WINDOWS\system32\explorerframe.dll: Ordinal130()
+#55 0x7453C088 in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#56 0x7453BCAC in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#57 0x7453BA6E in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#58 0x7652C6E9 in C:\WINDOWS\System32\shcore.dll: Ordinal245()
+#59 0x770E9680 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlUnwind()
+#60 0x770B602A in C:\WINDOWS\SYSTEM32\ntdll.dll: TpCallbackIndependent()
+#61 0x7581FCC9 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Dec  4 2023 18:45:07, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 04 2023 18:45:16
+
+Run file:	D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofrepository-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: Исключение С++, вызванное оператором throw.
+
+#1: Исключение EXCEPTION_CPP_MSC (0xE06D7363) при выполнении кода по адресу 0x7615F932 в функции RaiseException() в модуле C:\WINDOWS\System32\KERNELBASE.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005092FC (32-bit), Flags: CMdRE0, Thread: 0x4A50, GetLastError(): 127 (Не найдена указанная процедура). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7615F932 in C:\WINDOWS\System32\KERNELBASE.dll: RaiseException()
+# 1 0x5CB8AE86 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 2 0x5CB38F16 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 3 0x5CB3941E in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 4 0x5CA783FD in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 5 0x5CA75811 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 6 0x5CB0F93A in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 7 0x5CB0F012 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 8 0x5CB0DAB0 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 9 0x5CA79C13 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#10 0x5C9E924C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#11 0x5CB38B48 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#12 0x5CB38C0C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#13 0x770F2B66 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIpv6AddressToStringA()
+#14 0x770CDD72 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlActivateActivationContextUnsafeFast()
+#15 0x770D1873 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#16 0x770D19E1 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#17 0x770D2285 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIsCriticalSectionLockedByThread()
+#18 0x770CE2A2 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#19 0x770CDEE6 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#20 0x7613A206 in C:\WINDOWS\System32\KERNELBASE.dll: LoadLibraryExW()
+#21 0x769710D6 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#22 0x7697105F in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#23 0x76970E74 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#24 0x7696FD11 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#25 0x7698882E in C:\WINDOWS\System32\combase.dll: RoGetActivationFactory()
+#26 0x76956892 in C:\WINDOWS\System32\combase.dll: CoGetClassObject()
+#27 0x76954B85 in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#28 0x76962345 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#29 0x7695447F in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#30 0x76953C7A in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#31 0x769D2CF5 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#32 0x769D2BAD in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#33 0x769D2B31 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#34 0x7696230D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#35 0x76962B4D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#36 0x76962314 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#37 0x7698A5A2 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#38 0x76989811 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#39 0x7698957E in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#40 0x75AED4A0 in C:\WINDOWS\System32\SHELL32.dll: Ordinal866()
+#41 0x75BB5523 in C:\WINDOWS\System32\SHELL32.dll: StateRepoNewMenuCache_EnsureCacheAsync()
+#42 0x75B66C84 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#43 0x75B67277 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#44 0x75AD19C6 in C:\WINDOWS\System32\SHELL32.dll: SHCreateDefaultContextMenu()
+#45 0x75AD26A6 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#46 0x75AD1ED5 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#47 0x75AD1DB2 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#48 0x75AD1B6F in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#49 0x74614510 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#50 0x74614421 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#51 0x749B28AE in C:\WINDOWS\SYSTEM32\windows.storage.dll: ShellExecuteExW()
+#52 0x74704E00 in C:\WINDOWS\SYSTEM32\windows.storage.dll: Ordinal2009()
+#53 0x74614375 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#54 0x5E5A34DA in C:\WINDOWS\system32\explorerframe.dll: Ordinal130()
+#55 0x7453C088 in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#56 0x7453BCAC in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#57 0x7453BA6E in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#58 0x7652C6E9 in C:\WINDOWS\System32\shcore.dll: Ordinal245()
+#59 0x770E9680 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlUnwind()
+#60 0x770B602A in C:\WINDOWS\SYSTEM32\ntdll.dll: TpCallbackIndependent()
+#61 0x7581FCC9 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Dec  4 2023 18:49:44, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 04 2023 18:49:49
+
+Run file:	D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofrepository-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: Исключение С++, вызванное оператором throw.
+
+#1: Исключение EXCEPTION_CPP_MSC (0xE06D7363) при выполнении кода по адресу 0x7615F932 в функции RaiseException() в модуле C:\WINDOWS\System32\KERNELBASE.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005092FC (32-bit), Flags: CMdRE0, Thread: 0x3CC, GetLastError(): 127 (Не найдена указанная процедура). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7615F932 in C:\WINDOWS\System32\KERNELBASE.dll: RaiseException()
+# 1 0x5CE1AE86 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 2 0x5CDC8F16 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 3 0x5CDC941E in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 4 0x5CD083FD in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 5 0x5CD05811 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 6 0x5CD9F93A in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 7 0x5CD9F012 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 8 0x5CD9DAB0 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 9 0x5CD09C13 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#10 0x5CC7924C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#11 0x5CDC8B48 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#12 0x5CDC8C0C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#13 0x770F2B66 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIpv6AddressToStringA()
+#14 0x770CDD72 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlActivateActivationContextUnsafeFast()
+#15 0x770D1873 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#16 0x770D19E1 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#17 0x770D2285 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIsCriticalSectionLockedByThread()
+#18 0x770CE2A2 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#19 0x770CDEE6 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#20 0x7613A206 in C:\WINDOWS\System32\KERNELBASE.dll: LoadLibraryExW()
+#21 0x769710D6 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#22 0x7697105F in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#23 0x76970E74 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#24 0x7696FD11 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#25 0x7698882E in C:\WINDOWS\System32\combase.dll: RoGetActivationFactory()
+#26 0x76956892 in C:\WINDOWS\System32\combase.dll: CoGetClassObject()
+#27 0x76954B85 in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#28 0x76962345 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#29 0x7695447F in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#30 0x76953C7A in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#31 0x769D2CF5 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#32 0x769D2BAD in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#33 0x769D2B31 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#34 0x7696230D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#35 0x76962B4D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#36 0x76962314 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#37 0x7698A5A2 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#38 0x76989811 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#39 0x7698957E in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#40 0x75AED4A0 in C:\WINDOWS\System32\SHELL32.dll: Ordinal866()
+#41 0x75BB5523 in C:\WINDOWS\System32\SHELL32.dll: StateRepoNewMenuCache_EnsureCacheAsync()
+#42 0x75B66C84 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#43 0x75B67277 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#44 0x75AD19C6 in C:\WINDOWS\System32\SHELL32.dll: SHCreateDefaultContextMenu()
+#45 0x75AD26A6 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#46 0x75AD1ED5 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#47 0x75AD1DB2 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#48 0x75AD1B6F in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#49 0x74614510 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#50 0x74614421 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#51 0x749B28AE in C:\WINDOWS\SYSTEM32\windows.storage.dll: ShellExecuteExW()
+#52 0x74704E00 in C:\WINDOWS\SYSTEM32\windows.storage.dll: Ordinal2009()
+#53 0x74614375 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#54 0x5E5A34DA in C:\WINDOWS\system32\explorerframe.dll: Ordinal130()
+#55 0x7453C088 in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#56 0x7453BCAC in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#57 0x7453BA6E in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#58 0x7652C6E9 in C:\WINDOWS\System32\shcore.dll: Ordinal245()
+#59 0x770E9680 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlUnwind()
+#60 0x770B602A in C:\WINDOWS\SYSTEM32\ntdll.dll: TpCallbackIndependent()
+#61 0x7581FCC9 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Dec  4 2023 18:56:43, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 04 2023 18:56:47
+
+Run file:	D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofrepository-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: Исключение С++, вызванное оператором throw.
+
+#1: Исключение EXCEPTION_CPP_MSC (0xE06D7363) при выполнении кода по адресу 0x7615F932 в функции RaiseException() в модуле C:\WINDOWS\System32\KERNELBASE.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005092FC (32-bit), Flags: CMdRE0, Thread: 0x4378, GetLastError(): 127 (Не найдена указанная процедура). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7615F932 in C:\WINDOWS\System32\KERNELBASE.dll: RaiseException()
+# 1 0x5CE1AE86 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 2 0x5CDC8F16 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 3 0x5CDC941E in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 4 0x5CD083FD in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 5 0x5CD05811 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 6 0x5CD9F93A in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 7 0x5CD9F012 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 8 0x5CD9DAB0 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 9 0x5CD09C13 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#10 0x5CC7924C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#11 0x5CDC8B48 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#12 0x5CDC8C0C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#13 0x770F2B66 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIpv6AddressToStringA()
+#14 0x770CDD72 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlActivateActivationContextUnsafeFast()
+#15 0x770D1873 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#16 0x770D19E1 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#17 0x770D2285 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIsCriticalSectionLockedByThread()
+#18 0x770CE2A2 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#19 0x770CDEE6 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#20 0x7613A206 in C:\WINDOWS\System32\KERNELBASE.dll: LoadLibraryExW()
+#21 0x769710D6 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#22 0x7697105F in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#23 0x76970E74 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#24 0x7696FD11 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#25 0x7698882E in C:\WINDOWS\System32\combase.dll: RoGetActivationFactory()
+#26 0x76956892 in C:\WINDOWS\System32\combase.dll: CoGetClassObject()
+#27 0x76954B85 in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#28 0x76962345 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#29 0x7695447F in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#30 0x76953C7A in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#31 0x769D2CF5 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#32 0x769D2BAD in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#33 0x769D2B31 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#34 0x7696230D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#35 0x76962B4D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#36 0x76962314 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#37 0x7698A5A2 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#38 0x76989811 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#39 0x7698957E in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#40 0x75AED4A0 in C:\WINDOWS\System32\SHELL32.dll: Ordinal866()
+#41 0x75BB5523 in C:\WINDOWS\System32\SHELL32.dll: StateRepoNewMenuCache_EnsureCacheAsync()
+#42 0x75B66C84 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#43 0x75B67277 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#44 0x75AD19C6 in C:\WINDOWS\System32\SHELL32.dll: SHCreateDefaultContextMenu()
+#45 0x75AD26A6 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#46 0x75AD1ED5 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#47 0x75AD1DB2 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#48 0x75AD1B6F in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#49 0x74614510 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#50 0x74614421 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#51 0x749B28AE in C:\WINDOWS\SYSTEM32\windows.storage.dll: ShellExecuteExW()
+#52 0x74704E00 in C:\WINDOWS\SYSTEM32\windows.storage.dll: Ordinal2009()
+#53 0x74614375 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#54 0x5E5A34DA in C:\WINDOWS\system32\explorerframe.dll: Ordinal130()
+#55 0x7453C088 in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#56 0x7453BCAC in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#57 0x7453BA6E in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#58 0x7652C6E9 in C:\WINDOWS\System32\shcore.dll: Ordinal245()
+#59 0x770E9680 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlUnwind()
+#60 0x770B602A in C:\WINDOWS\SYSTEM32\ntdll.dll: TpCallbackIndependent()
+#61 0x7581FCC9 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Dec  4 2023 18:57:42, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 04 2023 18:57:45
+
+Run file:	D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofrepository-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: Исключение С++, вызванное оператором throw.
+
+#1: Исключение EXCEPTION_CPP_MSC (0xE06D7363) при выполнении кода по адресу 0x7615F932 в функции RaiseException() в модуле C:\WINDOWS\System32\KERNELBASE.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005092FC (32-bit), Flags: CMdRE0, Thread: 0x115C, GetLastError(): 127 (Не найдена указанная процедура). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7615F932 in C:\WINDOWS\System32\KERNELBASE.dll: RaiseException()
+# 1 0x5CE1AE86 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 2 0x5CDC8F16 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 3 0x5CDC941E in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 4 0x5CD083FD in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 5 0x5CD05811 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 6 0x5CD9F93A in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 7 0x5CD9F012 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 8 0x5CD9DAB0 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 9 0x5CD09C13 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#10 0x5CC7924C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#11 0x5CDC8B48 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#12 0x5CDC8C0C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#13 0x770F2B66 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIpv6AddressToStringA()
+#14 0x770CDD72 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlActivateActivationContextUnsafeFast()
+#15 0x770D1873 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#16 0x770D19E1 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#17 0x770D2285 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIsCriticalSectionLockedByThread()
+#18 0x770CE2A2 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#19 0x770CDEE6 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#20 0x7613A206 in C:\WINDOWS\System32\KERNELBASE.dll: LoadLibraryExW()
+#21 0x769710D6 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#22 0x7697105F in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#23 0x76970E74 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#24 0x7696FD11 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#25 0x7698882E in C:\WINDOWS\System32\combase.dll: RoGetActivationFactory()
+#26 0x76956892 in C:\WINDOWS\System32\combase.dll: CoGetClassObject()
+#27 0x76954B85 in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#28 0x76962345 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#29 0x7695447F in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#30 0x76953C7A in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#31 0x769D2CF5 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#32 0x769D2BAD in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#33 0x769D2B31 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#34 0x7696230D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#35 0x76962B4D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#36 0x76962314 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#37 0x7698A5A2 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#38 0x76989811 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#39 0x7698957E in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#40 0x75AED4A0 in C:\WINDOWS\System32\SHELL32.dll: Ordinal866()
+#41 0x75BB5523 in C:\WINDOWS\System32\SHELL32.dll: StateRepoNewMenuCache_EnsureCacheAsync()
+#42 0x75B66C84 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#43 0x75B67277 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#44 0x75AD19C6 in C:\WINDOWS\System32\SHELL32.dll: SHCreateDefaultContextMenu()
+#45 0x75AD26A6 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#46 0x75AD1ED5 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#47 0x75AD1DB2 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#48 0x75AD1B6F in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#49 0x74614510 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#50 0x74614421 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#51 0x749B28AE in C:\WINDOWS\SYSTEM32\windows.storage.dll: ShellExecuteExW()
+#52 0x74704E00 in C:\WINDOWS\SYSTEM32\windows.storage.dll: Ordinal2009()
+#53 0x74614375 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#54 0x5E5A34DA in C:\WINDOWS\system32\explorerframe.dll: Ordinal130()
+#55 0x7453C088 in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#56 0x7453BCAC in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#57 0x7453BA6E in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#58 0x7652C6E9 in C:\WINDOWS\System32\shcore.dll: Ordinal245()
+#59 0x770E9680 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlUnwind()
+#60 0x770B602A in C:\WINDOWS\SYSTEM32\ntdll.dll: TpCallbackIndependent()
+#61 0x7581FCC9 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Dec  4 2023 19:00:49, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 04 2023 19:00:54
+
+Run file:	D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofrepository-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: Исключение С++, вызванное оператором throw.
+
+#1: Исключение EXCEPTION_CPP_MSC (0xE06D7363) при выполнении кода по адресу 0x7615F932 в функции RaiseException() в модуле C:\WINDOWS\System32\KERNELBASE.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005092FC (32-bit), Flags: CMdRE0, Thread: 0x46E0, GetLastError(): 127 (Не найдена указанная процедура). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7615F932 in C:\WINDOWS\System32\KERNELBASE.dll: RaiseException()
+# 1 0x5CB8AE86 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 2 0x5CB38F16 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 3 0x5CB3941E in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 4 0x5CA783FD in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 5 0x5CA75811 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 6 0x5CB0F93A in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 7 0x5CB0F012 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 8 0x5CB0DAB0 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 9 0x5CA79C13 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#10 0x5C9E924C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#11 0x5CB38B48 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#12 0x5CB38C0C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#13 0x770F2B66 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIpv6AddressToStringA()
+#14 0x770CDD72 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlActivateActivationContextUnsafeFast()
+#15 0x770D1873 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#16 0x770D19E1 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#17 0x770D2285 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIsCriticalSectionLockedByThread()
+#18 0x770CE2A2 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#19 0x770CDEE6 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#20 0x7613A206 in C:\WINDOWS\System32\KERNELBASE.dll: LoadLibraryExW()
+#21 0x769710D6 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#22 0x7697105F in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#23 0x76970E74 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#24 0x7696FD11 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#25 0x7698882E in C:\WINDOWS\System32\combase.dll: RoGetActivationFactory()
+#26 0x76956892 in C:\WINDOWS\System32\combase.dll: CoGetClassObject()
+#27 0x76954B85 in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#28 0x76962345 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#29 0x7695447F in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#30 0x76953C7A in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#31 0x769D2CF5 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#32 0x769D2BAD in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#33 0x769D2B31 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#34 0x7696230D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#35 0x76962B4D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#36 0x76962314 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#37 0x7698A5A2 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#38 0x76989811 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#39 0x7698957E in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#40 0x75AED4A0 in C:\WINDOWS\System32\SHELL32.dll: Ordinal866()
+#41 0x75BB5523 in C:\WINDOWS\System32\SHELL32.dll: StateRepoNewMenuCache_EnsureCacheAsync()
+#42 0x75B66C84 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#43 0x75B67277 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#44 0x75AD19C6 in C:\WINDOWS\System32\SHELL32.dll: SHCreateDefaultContextMenu()
+#45 0x75AD26A6 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#46 0x75AD1ED5 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#47 0x75AD1DB2 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#48 0x75AD1B6F in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#49 0x74614510 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#50 0x74614421 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#51 0x749B28AE in C:\WINDOWS\SYSTEM32\windows.storage.dll: ShellExecuteExW()
+#52 0x74704E00 in C:\WINDOWS\SYSTEM32\windows.storage.dll: Ordinal2009()
+#53 0x74614375 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#54 0x5E5A34DA in C:\WINDOWS\system32\explorerframe.dll: Ordinal130()
+#55 0x7453C088 in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#56 0x7453BCAC in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#57 0x7453BA6E in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#58 0x7652C6E9 in C:\WINDOWS\System32\shcore.dll: Ordinal245()
+#59 0x770E9680 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlUnwind()
+#60 0x770B602A in C:\WINDOWS\SYSTEM32\ntdll.dll: TpCallbackIndependent()
+#61 0x7581FCC9 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Dec  4 2023 19:19:41, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 04 2023 19:19:45
+
+Run file:	D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofrepository-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: Исключение С++, вызванное оператором throw.
+
+#1: Исключение EXCEPTION_CPP_MSC (0xE06D7363) при выполнении кода по адресу 0x7615F932 в функции RaiseException() в модуле C:\WINDOWS\System32\KERNELBASE.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005092FC (32-bit), Flags: CMdRE0, Thread: 0x231C, GetLastError(): 127 (Не найдена указанная процедура). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7615F932 in C:\WINDOWS\System32\KERNELBASE.dll: RaiseException()
+# 1 0x5CB8AE86 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 2 0x5CB38F16 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 3 0x5CB3941E in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 4 0x5CA783FD in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 5 0x5CA75811 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 6 0x5CB0F93A in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 7 0x5CB0F012 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 8 0x5CB0DAB0 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 9 0x5CA79C13 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#10 0x5C9E924C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#11 0x5CB38B48 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#12 0x5CB38C0C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#13 0x770F2B66 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIpv6AddressToStringA()
+#14 0x770CDD72 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlActivateActivationContextUnsafeFast()
+#15 0x770D1873 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#16 0x770D19E1 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#17 0x770D2285 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIsCriticalSectionLockedByThread()
+#18 0x770CE2A2 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#19 0x770CDEE6 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#20 0x7613A206 in C:\WINDOWS\System32\KERNELBASE.dll: LoadLibraryExW()
+#21 0x769710D6 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#22 0x7697105F in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#23 0x76970E74 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#24 0x7696FD11 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#25 0x7698882E in C:\WINDOWS\System32\combase.dll: RoGetActivationFactory()
+#26 0x76956892 in C:\WINDOWS\System32\combase.dll: CoGetClassObject()
+#27 0x76954B85 in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#28 0x76962345 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#29 0x7695447F in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#30 0x76953C7A in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#31 0x769D2CF5 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#32 0x769D2BAD in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#33 0x769D2B31 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#34 0x7696230D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#35 0x76962B4D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#36 0x76962314 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#37 0x7698A5A2 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#38 0x76989811 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#39 0x7698957E in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#40 0x75AED4A0 in C:\WINDOWS\System32\SHELL32.dll: Ordinal866()
+#41 0x75BB5523 in C:\WINDOWS\System32\SHELL32.dll: StateRepoNewMenuCache_EnsureCacheAsync()
+#42 0x75B66C84 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#43 0x75B67277 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#44 0x75AD19C6 in C:\WINDOWS\System32\SHELL32.dll: SHCreateDefaultContextMenu()
+#45 0x75AD26A6 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#46 0x75AD1ED5 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#47 0x75AD1DB2 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#48 0x75AD1B6F in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#49 0x74614510 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#50 0x74614421 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#51 0x749B28AE in C:\WINDOWS\SYSTEM32\windows.storage.dll: ShellExecuteExW()
+#52 0x74704E00 in C:\WINDOWS\SYSTEM32\windows.storage.dll: Ordinal2009()
+#53 0x74614375 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#54 0x5E5A34DA in C:\WINDOWS\system32\explorerframe.dll: Ordinal130()
+#55 0x7453C088 in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#56 0x7453BCAC in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#57 0x7453BA6E in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#58 0x7652C6E9 in C:\WINDOWS\System32\shcore.dll: Ordinal245()
+#59 0x770E9680 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlUnwind()
+#60 0x770B602A in C:\WINDOWS\SYSTEM32\ntdll.dll: TpCallbackIndependent()
+#61 0x7581FCC9 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Dec  4 2023 19:20:59, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 04 2023 19:21:04
+
+Run file:	D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofrepository-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: Исключение С++, вызванное оператором throw.
+
+#1: Исключение EXCEPTION_CPP_MSC (0xE06D7363) при выполнении кода по адресу 0x7615F932 в функции RaiseException() в модуле C:\WINDOWS\System32\KERNELBASE.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005092FC (32-bit), Flags: CMdRE0, Thread: 0x2B24, GetLastError(): 127 (Не найдена указанная процедура). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7615F932 in C:\WINDOWS\System32\KERNELBASE.dll: RaiseException()
+# 1 0x5CFEAE86 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 2 0x5CF98F16 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 3 0x5CF9941E in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 4 0x5CED83FD in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 5 0x5CED5811 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 6 0x5CF6F93A in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 7 0x5CF6F012 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 8 0x5CF6DAB0 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 9 0x5CED9C13 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#10 0x5CE4924C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#11 0x5CF98B48 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#12 0x5CF98C0C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#13 0x770F2B66 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIpv6AddressToStringA()
+#14 0x770CDD72 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlActivateActivationContextUnsafeFast()
+#15 0x770D1873 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#16 0x770D19E1 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#17 0x770D2285 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIsCriticalSectionLockedByThread()
+#18 0x770CE2A2 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#19 0x770CDEE6 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#20 0x7613A206 in C:\WINDOWS\System32\KERNELBASE.dll: LoadLibraryExW()
+#21 0x769710D6 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#22 0x7697105F in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#23 0x76970E74 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#24 0x7696FD11 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#25 0x7698882E in C:\WINDOWS\System32\combase.dll: RoGetActivationFactory()
+#26 0x76956892 in C:\WINDOWS\System32\combase.dll: CoGetClassObject()
+#27 0x76954B85 in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#28 0x76962345 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#29 0x7695447F in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#30 0x76953C7A in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#31 0x769D2CF5 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#32 0x769D2BAD in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#33 0x769D2B31 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#34 0x7696230D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#35 0x76962B4D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#36 0x76962314 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#37 0x7698A5A2 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#38 0x76989811 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#39 0x7698957E in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#40 0x75AED4A0 in C:\WINDOWS\System32\SHELL32.dll: Ordinal866()
+#41 0x75BB5523 in C:\WINDOWS\System32\SHELL32.dll: StateRepoNewMenuCache_EnsureCacheAsync()
+#42 0x75B66C84 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#43 0x75B67277 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#44 0x75AD19C6 in C:\WINDOWS\System32\SHELL32.dll: SHCreateDefaultContextMenu()
+#45 0x75AD26A6 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#46 0x75AD1ED5 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#47 0x75AD1DB2 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#48 0x75AD1B6F in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#49 0x74614510 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#50 0x74614421 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#51 0x749B28AE in C:\WINDOWS\SYSTEM32\windows.storage.dll: ShellExecuteExW()
+#52 0x74704E00 in C:\WINDOWS\SYSTEM32\windows.storage.dll: Ordinal2009()
+#53 0x74614375 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#54 0x5E5A34DA in C:\WINDOWS\system32\explorerframe.dll: Ordinal130()
+#55 0x7453C088 in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#56 0x7453BCAC in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#57 0x7453BA6E in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#58 0x7652C6E9 in C:\WINDOWS\System32\shcore.dll: Ordinal245()
+#59 0x770E9680 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlUnwind()
+#60 0x770B602A in C:\WINDOWS\SYSTEM32\ntdll.dll: TpCallbackIndependent()
+#61 0x7581FCC9 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Dec  4 2023 19:30:20, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 04 2023 19:30:24
+
+Run file:	D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofrepository-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: Исключение С++, вызванное оператором throw.
+
+#1: Исключение EXCEPTION_CPP_MSC (0xE06D7363) при выполнении кода по адресу 0x7615F932 в функции RaiseException() в модуле C:\WINDOWS\System32\KERNELBASE.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005092FC (32-bit), Flags: CMdRE0, Thread: 0x3FBC, GetLastError(): 127 (Не найдена указанная процедура). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7615F932 in C:\WINDOWS\System32\KERNELBASE.dll: RaiseException()
+# 1 0x6288AE86 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 2 0x62838F16 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 3 0x6283941E in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 4 0x627783FD in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 5 0x62775811 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 6 0x6280F93A in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 7 0x6280F012 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 8 0x6280DAB0 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 9 0x62779C13 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#10 0x626E924C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#11 0x62838B48 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#12 0x62838C0C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#13 0x770F2B66 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIpv6AddressToStringA()
+#14 0x770CDD72 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlActivateActivationContextUnsafeFast()
+#15 0x770D1873 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#16 0x770D19E1 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#17 0x770D2285 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIsCriticalSectionLockedByThread()
+#18 0x770CE2A2 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#19 0x770CDEE6 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#20 0x7613A206 in C:\WINDOWS\System32\KERNELBASE.dll: LoadLibraryExW()
+#21 0x769710D6 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#22 0x7697105F in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#23 0x76970E74 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#24 0x7696FD11 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#25 0x7698882E in C:\WINDOWS\System32\combase.dll: RoGetActivationFactory()
+#26 0x76956892 in C:\WINDOWS\System32\combase.dll: CoGetClassObject()
+#27 0x76954B85 in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#28 0x76962345 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#29 0x7695447F in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#30 0x76953C7A in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#31 0x769D2CF5 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#32 0x769D2BAD in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#33 0x769D2B31 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#34 0x7696230D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#35 0x76962B4D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#36 0x76962314 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#37 0x7698A5A2 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#38 0x76989811 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#39 0x7698957E in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#40 0x75AED4A0 in C:\WINDOWS\System32\SHELL32.dll: Ordinal866()
+#41 0x75BB5523 in C:\WINDOWS\System32\SHELL32.dll: StateRepoNewMenuCache_EnsureCacheAsync()
+#42 0x75B66C84 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#43 0x75B67277 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#44 0x75AD19C6 in C:\WINDOWS\System32\SHELL32.dll: SHCreateDefaultContextMenu()
+#45 0x75AD26A6 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#46 0x75AD1ED5 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#47 0x75AD1DB2 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#48 0x75AD1B6F in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#49 0x74614510 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#50 0x74614421 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#51 0x749B28AE in C:\WINDOWS\SYSTEM32\windows.storage.dll: ShellExecuteExW()
+#52 0x74704E00 in C:\WINDOWS\SYSTEM32\windows.storage.dll: Ordinal2009()
+#53 0x74614375 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#54 0x632E34DA in C:\WINDOWS\system32\explorerframe.dll: Ordinal130()
+#55 0x7453C088 in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#56 0x7453BCAC in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#57 0x7453BA6E in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#58 0x7652C6E9 in C:\WINDOWS\System32\shcore.dll: Ordinal245()
+#59 0x770E9680 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlUnwind()
+#60 0x770B602A in C:\WINDOWS\SYSTEM32\ntdll.dll: TpCallbackIndependent()
+#61 0x7581FCC9 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Dec  5 2023 09:47:37, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 05 2023 09:47:42
+
+Run file:	D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofrepository-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: Исключение С++, вызванное оператором throw.
+
+#1: Исключение EXCEPTION_CPP_MSC (0xE06D7363) при выполнении кода по адресу 0x7615F932 в функции RaiseException() в модуле C:\WINDOWS\System32\KERNELBASE.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x005092FC (32-bit), Flags: CMdRE0, Thread: 0x11B4, GetLastError(): 127 (Не найдена указанная процедура). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7615F932 in C:\WINDOWS\System32\KERNELBASE.dll: RaiseException()
+# 1 0x6258AE86 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 2 0x62538F16 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 3 0x6253941E in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 4 0x624783FD in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 5 0x62475811 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 6 0x6250F93A in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 7 0x6250F012 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 8 0x6250DAB0 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 9 0x62479C13 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#10 0x623E924C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#11 0x62538B48 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#12 0x62538C0C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#13 0x770F2B66 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIpv6AddressToStringA()
+#14 0x770CDD72 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlActivateActivationContextUnsafeFast()
+#15 0x770D1873 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#16 0x770D19E1 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#17 0x770D2285 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIsCriticalSectionLockedByThread()
+#18 0x770CE2A2 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#19 0x770CDEE6 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#20 0x7613A206 in C:\WINDOWS\System32\KERNELBASE.dll: LoadLibraryExW()
+#21 0x769710D6 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#22 0x7697105F in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#23 0x76970E74 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#24 0x7696FD11 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#25 0x7698882E in C:\WINDOWS\System32\combase.dll: RoGetActivationFactory()
+#26 0x76956892 in C:\WINDOWS\System32\combase.dll: CoGetClassObject()
+#27 0x76954B85 in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#28 0x76962345 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#29 0x7695447F in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#30 0x76953C7A in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#31 0x769D2CF5 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#32 0x769D2BAD in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#33 0x769D2B31 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#34 0x7696230D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#35 0x76962B4D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#36 0x76962314 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#37 0x7698A5A2 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#38 0x76989811 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#39 0x7698957E in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#40 0x75AED4A0 in C:\WINDOWS\System32\SHELL32.dll: Ordinal866()
+#41 0x75BB5523 in C:\WINDOWS\System32\SHELL32.dll: StateRepoNewMenuCache_EnsureCacheAsync()
+#42 0x75B66C84 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#43 0x75B67277 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#44 0x75AD19C6 in C:\WINDOWS\System32\SHELL32.dll: SHCreateDefaultContextMenu()
+#45 0x75AD26A6 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#46 0x75AD1ED5 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#47 0x75AD1DB2 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#48 0x75AD1B6F in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#49 0x74614510 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#50 0x74614421 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#51 0x749B28AE in C:\WINDOWS\SYSTEM32\windows.storage.dll: ShellExecuteExW()
+#52 0x74704E00 in C:\WINDOWS\SYSTEM32\windows.storage.dll: Ordinal2009()
+#53 0x74614375 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#54 0x632E34DA in C:\WINDOWS\system32\explorerframe.dll: Ordinal130()
+#55 0x7453C088 in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#56 0x7453BCAC in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#57 0x7453BA6E in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#58 0x7652C6E9 in C:\WINDOWS\System32\shcore.dll: Ordinal245()
+#59 0x770E9680 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlUnwind()
+#60 0x770B602A in C:\WINDOWS\SYSTEM32\ntdll.dll: TpCallbackIndependent()
+#61 0x7581FCC9 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Dec  5 2023 09:47:57, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 05 2023 09:48:02
+
+Run file:	D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofrepository-main
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe,
+
+ВНЕЗАПНО: Исключение С++, вызванное оператором throw.
+
+#1: Исключение EXCEPTION_CPP_MSC (0xE06D7363) при выполнении кода по адресу 0x7605F932 в функции RaiseException() в модуле C:\WINDOWS\System32\KERNELBASE.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x0050A2FC (32-bit), Flags: CMdRE0, Thread: 0x40C8, GetLastError(): 127 (Не найдена указанная процедура). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x7605F932 in C:\WINDOWS\System32\KERNELBASE.dll: RaiseException()
+# 1 0x59B3AE86 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 2 0x59AE8F16 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 3 0x59AE941E in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+# 4 0x59A283FD in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 5 0x59A25811 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 6 0x59ABF93A in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 7 0x59ABF012 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 8 0x59ABDAB0 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+# 9 0x59A29C13 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#10 0x5999924C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: DllCanUnloadNow()
+#11 0x59AE8B48 in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#12 0x59AE8C0C in C:\Program Files\AVAST Software\Avast\x86\ashShell.dll: on_avast_dll_unload()
+#13 0x77402B66 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIpv6AddressToStringA()
+#14 0x773DDD72 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlActivateActivationContextUnsafeFast()
+#15 0x773E1873 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#16 0x773E19E1 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlEqualUnicodeString()
+#17 0x773E2285 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlIsCriticalSectionLockedByThread()
+#18 0x773DE2A2 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#19 0x773DDEE6 in C:\WINDOWS\SYSTEM32\ntdll.dll: LdrLoadDll()
+#20 0x7603A206 in C:\WINDOWS\System32\KERNELBASE.dll: LoadLibraryExW()
+#21 0x764C10D6 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#22 0x764C105F in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#23 0x764C0E74 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#24 0x764BFD11 in C:\WINDOWS\System32\combase.dll: WindowsCreateString()
+#25 0x764D882E in C:\WINDOWS\System32\combase.dll: RoGetActivationFactory()
+#26 0x764A6892 in C:\WINDOWS\System32\combase.dll: CoGetClassObject()
+#27 0x764A4B85 in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#28 0x764B2345 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#29 0x764A447F in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#30 0x764A3C7A in C:\WINDOWS\System32\combase.dll: CoCreateGuid()
+#31 0x76522CF5 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#32 0x76522BAD in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#33 0x76522B31 in C:\WINDOWS\System32\combase.dll: HSTRING_UserFree()
+#34 0x764B230D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#35 0x764B2B4D in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#36 0x764B2314 in C:\WINDOWS\System32\combase.dll: CoGetTreatAsClass()
+#37 0x764DA5A2 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#38 0x764D9811 in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#39 0x764D957E in C:\WINDOWS\System32\combase.dll: CoCreateInstance()
+#40 0x755BD4A0 in C:\WINDOWS\System32\SHELL32.dll: Ordinal866()
+#41 0x75685523 in C:\WINDOWS\System32\SHELL32.dll: StateRepoNewMenuCache_EnsureCacheAsync()
+#42 0x75636C84 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#43 0x75637277 in C:\WINDOWS\System32\SHELL32.dll: Ordinal660()
+#44 0x755A19C6 in C:\WINDOWS\System32\SHELL32.dll: SHCreateDefaultContextMenu()
+#45 0x755A26A6 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#46 0x755A1ED5 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#47 0x755A1DB2 in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#48 0x755A1B6F in C:\WINDOWS\System32\SHELL32.dll: SHELL32_IconOverlayManagerInit()
+#49 0x748C4510 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#50 0x748C4421 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#51 0x74C628AE in C:\WINDOWS\SYSTEM32\windows.storage.dll: ShellExecuteExW()
+#52 0x749B4E00 in C:\WINDOWS\SYSTEM32\windows.storage.dll: Ordinal2009()
+#53 0x748C4375 in C:\WINDOWS\SYSTEM32\windows.storage.dll: SHGetFolderLocation()
+#54 0x66EE34DA in C:\WINDOWS\system32\explorerframe.dll: Ordinal130()
+#55 0x747EC088 in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#56 0x747EBCAC in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#57 0x747EBA6E in C:\WINDOWS\SYSTEM32\windows.storage.dll: CCachedShellItem_CreateInstance()
+#58 0x76EDC6E9 in C:\WINDOWS\System32\shcore.dll: Ordinal245()
+#59 0x773F9680 in C:\WINDOWS\SYSTEM32\ntdll.dll: RtlUnwind()
+#60 0x773C602A in C:\WINDOWS\SYSTEM32\ntdll.dll: TpCallbackIndependent()
+#61 0x76D8FCC9 in C:\WINDOWS\System32\KERNEL32.dll: BaseThreadInitThunk()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	d:\program\codeblocks\mingw\include\txlib.h
+Compiled:	Dec 11 2023 17:07:44, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 11 2023 17:07:50
+
+Run file:	D:\проекты и другое\clashofrepository-main\bin\Debug\clash.exe
+Directory:	D:\проекты и другое\clashofrepository-main
+
+--------------------------------------------------
